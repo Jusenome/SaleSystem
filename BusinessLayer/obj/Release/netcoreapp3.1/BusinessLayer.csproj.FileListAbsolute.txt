@@ -1,0 +1,15 @@
+C:\Users\Edisson\Documents\Development Courses SN\SaleSystem\BusinessLayer\obj\Release\netcoreapp3.1\BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\Edisson\Documents\Development Courses SN\SaleSystem\BusinessLayer\obj\Release\netcoreapp3.1\BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Edisson\Documents\Development Courses SN\SaleSystem\BusinessLayer\obj\Release\netcoreapp3.1\BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\Edisson\Documents\Development Courses SN\SaleSystem\BusinessLayer\obj\Release\netcoreapp3.1\BusinessLayer.AssemblyInfo.cs
+C:\Users\Edisson\Documents\Development Courses SN\SaleSystem\BusinessLayer\obj\Release\netcoreapp3.1\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Edisson\Documents\Development Courses SN\SaleSystem\BusinessLayer\bin\Release\netcoreapp3.1\BusinessLayer.deps.json
+C:\Users\Edisson\Documents\Development Courses SN\SaleSystem\BusinessLayer\bin\Release\netcoreapp3.1\BusinessLayer.dll
+C:\Users\Edisson\Documents\Development Courses SN\SaleSystem\BusinessLayer\bin\Release\netcoreapp3.1\BusinessLayer.pdb
+C:\Users\Edisson\Documents\Development Courses SN\SaleSystem\BusinessLayer\bin\Release\netcoreapp3.1\DataLayer.dll
+C:\Users\Edisson\Documents\Development Courses SN\SaleSystem\BusinessLayer\bin\Release\netcoreapp3.1\EntityLayer.dll
+C:\Users\Edisson\Documents\Development Courses SN\SaleSystem\BusinessLayer\bin\Release\netcoreapp3.1\DataLayer.pdb
+C:\Users\Edisson\Documents\Development Courses SN\SaleSystem\BusinessLayer\bin\Release\netcoreapp3.1\EntityLayer.pdb
+C:\Users\Edisson\Documents\Development Courses SN\SaleSystem\BusinessLayer\obj\Release\netcoreapp3.1\BusinessLayer.csproj.CopyComplete
+C:\Users\Edisson\Documents\Development Courses SN\SaleSystem\BusinessLayer\obj\Release\netcoreapp3.1\BusinessLayer.dll
+C:\Users\Edisson\Documents\Development Courses SN\SaleSystem\BusinessLayer\obj\Release\netcoreapp3.1\BusinessLayer.pdb
