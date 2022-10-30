@@ -14,5 +14,10 @@ namespace BusinessLayer
         {
             return oRole.GetRole(idRole);
         }
+
+        public List<Role> GetRoleList()
+        {
+            return oRole.GetRoleList();
+        }
     }
 }

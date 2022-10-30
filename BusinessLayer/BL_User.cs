@@ -14,6 +14,11 @@ namespace BusinessLayer
         {
             return oDLUser.ToList();
         }
+
+        public void CreateUser(string document, string fullName, string mail, string password, int idRole, bool state)
+        {
+            oDLUser.CreateUser(document, fullName, mail, password, idRole, state);
+        }
         
     }
 }

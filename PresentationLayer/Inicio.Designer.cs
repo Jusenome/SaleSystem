@@ -200,7 +200,7 @@ namespace PresentationLayer
             this.subMenuSaleRegister.IconColor = System.Drawing.Color.Black;
             this.subMenuSaleRegister.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuSaleRegister.Name = "subMenuSaleRegister";
-            this.subMenuSaleRegister.Size = new System.Drawing.Size(180, 22);
+            this.subMenuSaleRegister.Size = new System.Drawing.Size(129, 22);
             this.subMenuSaleRegister.Text = "Registrar";
             this.subMenuSaleRegister.Click += new System.EventHandler(this.subMenuSaleRegister_Click);
             // 
@@ -210,7 +210,7 @@ namespace PresentationLayer
             this.subMenuSaleDetail.IconColor = System.Drawing.Color.Black;
             this.subMenuSaleDetail.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuSaleDetail.Name = "subMenuSaleDetail";
-            this.subMenuSaleDetail.Size = new System.Drawing.Size(180, 22);
+            this.subMenuSaleDetail.Size = new System.Drawing.Size(129, 22);
             this.subMenuSaleDetail.Text = "Ver Detalle";
             this.subMenuSaleDetail.Click += new System.EventHandler(this.subMenuSaleDetail_Click);
             // 
@@ -269,7 +269,7 @@ namespace PresentationLayer
             this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContainer.Location = new System.Drawing.Point(0, 124);
             this.pnlContainer.Name = "pnlContainer";
-            this.pnlContainer.Size = new System.Drawing.Size(1101, 433);
+            this.pnlContainer.Size = new System.Drawing.Size(1101, 507);
             this.pnlContainer.TabIndex = 3;
             // 
             // lblUserName
@@ -278,7 +278,7 @@ namespace PresentationLayer
             this.lblUserName.BackColor = System.Drawing.Color.SteelBlue;
             this.lblUserName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblUserName.ForeColor = System.Drawing.Color.White;
-            this.lblUserName.Location = new System.Drawing.Point(954, 21);
+            this.lblUserName.Location = new System.Drawing.Point(968, 21);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(60, 19);
             this.lblUserName.TabIndex = 4;
@@ -288,7 +288,7 @@ namespace PresentationLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1101, 557);
+            this.ClientSize = new System.Drawing.Size(1101, 631);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.pnlContainer);
             this.Controls.Add(this.lblTitle);

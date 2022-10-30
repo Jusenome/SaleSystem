@@ -24,5 +24,22 @@ namespace DataLayer
 
             return role;
         }
+
+        public List<Role> GetRoleList()
+        {
+            List<Role> roles = new List<Role>();
+            DBContext.DB_SALE_SYSTEMContext db = new DBContext.DB_SALE_SYSTEMContext();
+
+            try
+            {
+                roles = db.Roles.ToList();
+            }
+            catch(Exception ex)
+            {
+                roles = new List<Role>();
+            }
+
+            return roles;
+        }
     }
 }
