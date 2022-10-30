@@ -15,9 +15,18 @@ namespace BusinessLayer
             return oDLUser.ToList();
         }
 
-        public void CreateUser(string document, string fullName, string mail, string password, int idRole, bool state)
+        public string CreateUser(AppUser user)
         {
-            oDLUser.CreateUser(document, fullName, mail, password, idRole, state);
+           string result = oDLUser.CreateUser(user);
+
+            return result;
+        }
+
+        public string UpdateUser(int id, AppUser dataUserUpdate)
+        {
+            string result = oDLUser.UpdateUser(id, dataUserUpdate);
+
+            return result;
         }
         
     }

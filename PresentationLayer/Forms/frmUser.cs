@@ -65,18 +65,54 @@ namespace PresentationLayer.Forms
         {
             BL_User blUser = new BL_User();
 
-            blUser.CreateUser(txtUserDocument.Text, txtUserName.Text, txtUserMail.Text, txtUserPassword.Text, 
-                (int)((Option_ComboBox)cmbUserRole.SelectedItem).value, (int)((Option_ComboBox)cmbUserState.SelectedItem).value == 1 ? true : false);
+            AppUser user = new AppUser()
+            {
+                Document = txtUserDocument.Text,
+                FullName = txtUserName.Text,
+                Mail = txtUserMail.Text,
+                Password = txtUserPassword.Text,
+                IdRole = (int)((Option_ComboBox)cmbUserRole.SelectedItem).value,
+                State = (int)((Option_ComboBox)cmbUserState.SelectedItem).value == 1 ? true : false
+            };
+
+            string result = blUser.CreateUser(user);
+            MessageBox.Show(result);
 
             dgvUserList.Rows.Clear();
+            cmbUserRole.Items.Clear();
+            cmbUserState.Items.Clear();
             frmUser_Load(sender, e);
 
             Clean();
         }
 
-        private void ibtnUserClean_Click(object sender, EventArgs e)
+        private void ibtnUserEdit_Click(object sender, EventArgs e)
+        {
+            AppUser user = new AppUser() { 
+                Id = Convert.ToInt32(txtUserId.Text),
+                Document = txtUserDocument.Text,
+                FullName = txtUserName.Text,
+                Mail = txtUserMail.Text,
+                Password = txtUserPassword.Text,
+                IdRole = (int)((Option_ComboBox)cmbUserRole.SelectedItem).value,
+                State = (int)((Option_ComboBox)cmbUserState.SelectedItem).value == 1 ? true : false 
+            };
+
+            string result = new BL_User().UpdateUser(Convert.ToInt32(txtUserId.Text), user);
+            MessageBox.Show(result);
+
+            dgvUserList.Rows.Clear();
+            cmbUserRole.Items.Clear();
+            cmbUserState.Items.Clear();
+            frmUser_Load(sender, e);
+
+            Clean();
+        }
+
+        private void ibtnUserCancel_Click(object sender, EventArgs e)
         {
             Clean();
+            
         }
 
         private void Clean()
@@ -90,6 +126,73 @@ namespace PresentationLayer.Forms
             cmbUserRole.SelectedIndex = 0;
             cmbUserState.SelectedIndex = 0;
 
+            ibtnUserSave.Visible = true;
+            ibtnUserSave.Location = new System.Drawing.Point(34, 431);
+            ibtnUserEdit.Visible = false;
+            ibtnUserEdit.Location = new System.Drawing.Point(34, 402);
+
         }
+
+        private void dgvUserList_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            int totalColumn = dgvUserList.ColumnCount;
+            if (e.ColumnIndex == totalColumn - 1)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                var imageWidth = Properties.Resources.lapiz.Width;
+                var imageHeight = Properties.Resources.lapiz.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - imageWidth) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - imageHeight) / 2;
+
+                e.Graphics.DrawImage(Properties.Resources.lapiz, new Rectangle(x, y, imageWidth, imageHeight));
+                e.Handled = true;
+            }
+        }
+
+        private void dgvUserList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dgvUserList.Columns[e.ColumnIndex].Name == "userEdit")
+            {
+                if(e.RowIndex >= 0)
+                {
+                    txtUserId.Text = dgvUserList.Rows[e.RowIndex].Cells["userId"].Value.ToString();
+                    txtUserDocument.Text = dgvUserList.Rows[e.RowIndex].Cells["userDocument"].Value.ToString();
+                    txtUserName.Text = dgvUserList.Rows[e.RowIndex].Cells["userName"].Value.ToString();
+                    txtUserMail.Text = dgvUserList.Rows[e.RowIndex].Cells["userEmail"].Value.ToString();
+                    txtUserPassword.Text = dgvUserList.Rows[e.RowIndex].Cells["userPassword"].Value.ToString();
+                    txtUserPasswordConfirm.Text = dgvUserList.Rows[e.RowIndex].Cells["userPassword"].Value.ToString();
+
+                    foreach(Option_ComboBox ocb in cmbUserRole.Items)
+                    {
+                        if(Convert.ToInt32(ocb.value) == Convert.ToInt32(dgvUserList.Rows[e.RowIndex].Cells["idRole"].Value))
+                        {
+                            cmbUserRole.SelectedIndex = cmbUserRole.Items.IndexOf(ocb);
+                            break;
+                        }
+                    }
+
+                    foreach(Option_ComboBox ocb in cmbUserState.Items)
+                    {
+                        if (Convert.ToInt32(ocb.value) == Convert.ToInt32(dgvUserList.Rows[e.RowIndex].Cells["valueState"].Value))
+                        {
+                            cmbUserState.SelectedIndex = cmbUserState.Items.IndexOf(ocb);
+                            break;
+                        }
+                    }
+
+                    ibtnUserSave.Visible = false;
+                    ibtnUserSave.Location = new System.Drawing.Point(34, 402);
+                    ibtnUserEdit.Visible = true;
+                    ibtnUserEdit.Location = new System.Drawing.Point(34, 431);
+                    
+                }
+            }
+        }
+
+        
     }
 }

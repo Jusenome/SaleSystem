@@ -29,12 +29,12 @@ namespace PresentationLayer.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlUserData = new System.Windows.Forms.Panel();
             this.txtUserId = new System.Windows.Forms.TextBox();
-            this.ibtnUserDelete = new FontAwesome.Sharp.IconButton();
-            this.ibtnUserClean = new FontAwesome.Sharp.IconButton();
+            this.ibtnUserCancel = new FontAwesome.Sharp.IconButton();
+            this.ibtnUserEdit = new FontAwesome.Sharp.IconButton();
             this.ibtnUserSave = new FontAwesome.Sharp.IconButton();
             this.cmbUserState = new System.Windows.Forms.ComboBox();
             this.cmbUserRole = new System.Windows.Forms.ComboBox();
@@ -58,7 +58,6 @@ namespace PresentationLayer.Forms
             this.ibtnCleanUserSearch = new FontAwesome.Sharp.IconButton();
             this.lblListTitle = new System.Windows.Forms.Label();
             this.dgvUserList = new System.Windows.Forms.DataGridView();
-            this.ibtnUserSearch = new FontAwesome.Sharp.IconButton();
             this.userId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +68,7 @@ namespace PresentationLayer.Forms
             this.valueState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ibtnUserSearch = new FontAwesome.Sharp.IconButton();
             this.pnlUserData.SuspendLayout();
             this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserList)).BeginInit();
@@ -79,8 +79,8 @@ namespace PresentationLayer.Forms
             this.pnlUserData.BackColor = System.Drawing.Color.White;
             this.pnlUserData.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlUserData.Controls.Add(this.txtUserId);
-            this.pnlUserData.Controls.Add(this.ibtnUserDelete);
-            this.pnlUserData.Controls.Add(this.ibtnUserClean);
+            this.pnlUserData.Controls.Add(this.ibtnUserCancel);
+            this.pnlUserData.Controls.Add(this.ibtnUserEdit);
             this.pnlUserData.Controls.Add(this.ibtnUserSave);
             this.pnlUserData.Controls.Add(this.cmbUserState);
             this.pnlUserData.Controls.Add(this.cmbUserRole);
@@ -111,47 +111,50 @@ namespace PresentationLayer.Forms
             this.txtUserId.TabIndex = 18;
             this.txtUserId.Text = "0";
             // 
-            // ibtnUserDelete
+            // ibtnUserCancel
             // 
-            this.ibtnUserDelete.BackColor = System.Drawing.Color.Firebrick;
-            this.ibtnUserDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ibtnUserDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnUserDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ibtnUserDelete.ForeColor = System.Drawing.Color.White;
-            this.ibtnUserDelete.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.ibtnUserDelete.IconColor = System.Drawing.Color.White;
-            this.ibtnUserDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnUserDelete.IconSize = 18;
-            this.ibtnUserDelete.Location = new System.Drawing.Point(34, 460);
-            this.ibtnUserDelete.Name = "ibtnUserDelete";
-            this.ibtnUserDelete.Size = new System.Drawing.Size(177, 23);
-            this.ibtnUserDelete.TabIndex = 17;
-            this.ibtnUserDelete.Text = "Eliminar";
-            this.ibtnUserDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ibtnUserDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ibtnUserDelete.UseVisualStyleBackColor = false;
+            this.ibtnUserCancel.BackColor = System.Drawing.Color.Firebrick;
+            this.ibtnUserCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ibtnUserCancel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ibtnUserCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnUserCancel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ibtnUserCancel.ForeColor = System.Drawing.Color.White;
+            this.ibtnUserCancel.IconChar = FontAwesome.Sharp.IconChar.StopCircle;
+            this.ibtnUserCancel.IconColor = System.Drawing.Color.White;
+            this.ibtnUserCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnUserCancel.IconSize = 18;
+            this.ibtnUserCancel.Location = new System.Drawing.Point(34, 460);
+            this.ibtnUserCancel.Name = "ibtnUserCancel";
+            this.ibtnUserCancel.Size = new System.Drawing.Size(177, 23);
+            this.ibtnUserCancel.TabIndex = 17;
+            this.ibtnUserCancel.Text = "Cancelar";
+            this.ibtnUserCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ibtnUserCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnUserCancel.UseVisualStyleBackColor = false;
+            this.ibtnUserCancel.Click += new System.EventHandler(this.ibtnUserCancel_Click);
             // 
-            // ibtnUserClean
+            // ibtnUserEdit
             // 
-            this.ibtnUserClean.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ibtnUserClean.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ibtnUserClean.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ibtnUserClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnUserClean.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ibtnUserClean.ForeColor = System.Drawing.Color.White;
-            this.ibtnUserClean.IconChar = FontAwesome.Sharp.IconChar.HandsBubbles;
-            this.ibtnUserClean.IconColor = System.Drawing.Color.White;
-            this.ibtnUserClean.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnUserClean.IconSize = 18;
-            this.ibtnUserClean.Location = new System.Drawing.Point(34, 431);
-            this.ibtnUserClean.Name = "ibtnUserClean";
-            this.ibtnUserClean.Size = new System.Drawing.Size(177, 23);
-            this.ibtnUserClean.TabIndex = 16;
-            this.ibtnUserClean.Text = "Limpiar";
-            this.ibtnUserClean.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ibtnUserClean.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ibtnUserClean.UseVisualStyleBackColor = false;
-            this.ibtnUserClean.Click += new System.EventHandler(this.ibtnUserClean_Click);
+            this.ibtnUserEdit.BackColor = System.Drawing.Color.DodgerBlue;
+            this.ibtnUserEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ibtnUserEdit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ibtnUserEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnUserEdit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ibtnUserEdit.ForeColor = System.Drawing.Color.White;
+            this.ibtnUserEdit.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.ibtnUserEdit.IconColor = System.Drawing.Color.White;
+            this.ibtnUserEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnUserEdit.IconSize = 18;
+            this.ibtnUserEdit.Location = new System.Drawing.Point(34, 402);
+            this.ibtnUserEdit.Name = "ibtnUserEdit";
+            this.ibtnUserEdit.Size = new System.Drawing.Size(177, 23);
+            this.ibtnUserEdit.TabIndex = 16;
+            this.ibtnUserEdit.Text = "Editar";
+            this.ibtnUserEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ibtnUserEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnUserEdit.UseVisualStyleBackColor = false;
+            this.ibtnUserEdit.Visible = false;
+            this.ibtnUserEdit.Click += new System.EventHandler(this.ibtnUserEdit_Click);
             // 
             // ibtnUserSave
             // 
@@ -165,7 +168,7 @@ namespace PresentationLayer.Forms
             this.ibtnUserSave.IconColor = System.Drawing.Color.White;
             this.ibtnUserSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibtnUserSave.IconSize = 18;
-            this.ibtnUserSave.Location = new System.Drawing.Point(34, 402);
+            this.ibtnUserSave.Location = new System.Drawing.Point(34, 431);
             this.ibtnUserSave.Name = "ibtnUserSave";
             this.ibtnUserSave.Size = new System.Drawing.Size(177, 23);
             this.ibtnUserSave.TabIndex = 15;
@@ -374,15 +377,15 @@ namespace PresentationLayer.Forms
             // dgvUserList
             // 
             this.dgvUserList.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUserList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUserList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvUserList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUserList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.userId,
@@ -399,32 +402,14 @@ namespace PresentationLayer.Forms
             this.dgvUserList.MultiSelect = false;
             this.dgvUserList.Name = "dgvUserList";
             this.dgvUserList.ReadOnly = true;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvUserList.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvUserList.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvUserList.RowTemplate.Height = 28;
             this.dgvUserList.Size = new System.Drawing.Size(762, 380);
             this.dgvUserList.TabIndex = 2;
-            // 
-            // ibtnUserSearch
-            // 
-            this.ibtnUserSearch.BackColor = System.Drawing.Color.White;
-            this.ibtnUserSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ibtnUserSearch.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ibtnUserSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnUserSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ibtnUserSearch.ForeColor = System.Drawing.Color.White;
-            this.ibtnUserSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.ibtnUserSearch.IconColor = System.Drawing.Color.Black;
-            this.ibtnUserSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnUserSearch.IconSize = 18;
-            this.ibtnUserSearch.Location = new System.Drawing.Point(965, 41);
-            this.ibtnUserSearch.Name = "ibtnUserSearch";
-            this.ibtnUserSearch.Size = new System.Drawing.Size(25, 23);
-            this.ibtnUserSearch.TabIndex = 19;
-            this.ibtnUserSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ibtnUserSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ibtnUserSearch.UseVisualStyleBackColor = false;
+            this.dgvUserList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserList_CellContentClick);
+            this.dgvUserList.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvUserList_CellPainting);
             // 
             // userId
             // 
@@ -494,6 +479,26 @@ namespace PresentationLayer.Forms
             this.userEdit.ReadOnly = true;
             this.userEdit.Width = 50;
             // 
+            // ibtnUserSearch
+            // 
+            this.ibtnUserSearch.BackColor = System.Drawing.Color.White;
+            this.ibtnUserSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ibtnUserSearch.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ibtnUserSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnUserSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ibtnUserSearch.ForeColor = System.Drawing.Color.White;
+            this.ibtnUserSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.ibtnUserSearch.IconColor = System.Drawing.Color.Black;
+            this.ibtnUserSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnUserSearch.IconSize = 18;
+            this.ibtnUserSearch.Location = new System.Drawing.Point(965, 41);
+            this.ibtnUserSearch.Name = "ibtnUserSearch";
+            this.ibtnUserSearch.Size = new System.Drawing.Size(25, 23);
+            this.ibtnUserSearch.TabIndex = 19;
+            this.ibtnUserSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ibtnUserSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnUserSearch.UseVisualStyleBackColor = false;
+            // 
             // frmUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -534,8 +539,8 @@ namespace PresentationLayer.Forms
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label lblUserDocument;
         private System.Windows.Forms.Label lblUserTitle;
-        private FontAwesome.Sharp.IconButton ibtnUserDelete;
-        private FontAwesome.Sharp.IconButton ibtnUserClean;
+        private FontAwesome.Sharp.IconButton ibtnUserCancel;
+        private FontAwesome.Sharp.IconButton ibtnUserEdit;
         private FontAwesome.Sharp.IconButton ibtnUserSave;
         private System.Windows.Forms.Panel pnlSearch;
         private System.Windows.Forms.DataGridView dgvUserList;
