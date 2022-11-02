@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using DataLayer;
 using EntityLayer;
@@ -10,7 +11,7 @@ namespace BusinessLayer
     {
         private DL_User oDLUser = new DL_User();
 
-        public List<AppUser> ToList()
+        public IQueryable<AppUser> ToList()
         {
             return oDLUser.ToList();
         }

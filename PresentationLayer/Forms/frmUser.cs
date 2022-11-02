@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -22,7 +23,7 @@ namespace PresentationLayer.Forms
 
         private void frmUser_Load(object sender, EventArgs e)
         {
-            List<AppUser> users = new BL_User().ToList();
+            
             List<Role> oRoles = new BL_Role().GetRoleList();
             
             foreach(Role role in oRoles)
@@ -41,7 +42,7 @@ namespace PresentationLayer.Forms
 
             foreach(DataGridViewColumn column in dgvUserList.Columns)
             {
-                if(column.Visible == true)
+                if(column.Visible == true && !(column.Name == "userEdit"))
                 {
                     cmbUserSearchBy.Items.Add(new Option_ComboBox() { value = column.Name, text = column.HeaderText });
                 }
@@ -50,14 +51,8 @@ namespace PresentationLayer.Forms
             cmbUserSearchBy.ValueMember = "value";
             cmbUserSearchBy.SelectedIndex = 0;
 
-
-            foreach (AppUser user in users)
-            {
-                string roleName = new BL_Role().GetRole((int)user.IdRole).Description;
-                
-                dgvUserList.Rows.Add(new object[] { user.Id, user.Document, user.FullName, user.Mail, user.Password, user.IdRole, roleName, 
-                    user.State == true ? 1 : 0, user.State == true ? "ACTIVO" : "INACTIVO", "" });
-            }
+            SearchBy("", "", e);
+            
             
         }
 
@@ -78,9 +73,7 @@ namespace PresentationLayer.Forms
             string result = blUser.CreateUser(user);
             MessageBox.Show(result);
 
-            dgvUserList.Rows.Clear();
-            cmbUserRole.Items.Clear();
-            cmbUserState.Items.Clear();
+            
             frmUser_Load(sender, e);
 
             Clean();
@@ -101,9 +94,7 @@ namespace PresentationLayer.Forms
             string result = new BL_User().UpdateUser(Convert.ToInt32(txtUserId.Text), user);
             MessageBox.Show(result);
 
-            dgvUserList.Rows.Clear();
-            cmbUserRole.Items.Clear();
-            cmbUserState.Items.Clear();
+            
             frmUser_Load(sender, e);
 
             Clean();
@@ -112,7 +103,7 @@ namespace PresentationLayer.Forms
         private void ibtnUserCancel_Click(object sender, EventArgs e)
         {
             Clean();
-            
+            frmUser_Load(sender, e);
         }
 
         private void Clean()
@@ -130,6 +121,11 @@ namespace PresentationLayer.Forms
             ibtnUserSave.Location = new System.Drawing.Point(34, 431);
             ibtnUserEdit.Visible = false;
             ibtnUserEdit.Location = new System.Drawing.Point(34, 402);
+
+            dgvUserList.Rows.Clear();
+            cmbUserRole.Items.Clear();
+            cmbUserState.Items.Clear();
+            cmbUserSearchBy.Items.Clear();
 
         }
 
@@ -193,6 +189,76 @@ namespace PresentationLayer.Forms
             }
         }
 
-        
+        private void txtUserSearch_TextChanged(object sender, EventArgs e)
+        {
+            SearchBy(((Option_ComboBox)cmbUserSearchBy.SelectedItem).text, txtUserSearch.Text, e);
+        }
+
+        private void SearchBy(string by, string searchString, EventArgs e)
+        {
+            IQueryable<AppUser> users = new BL_User().ToList();
+
+            if(!searchString.Trim().Equals(""))
+            {
+                if(by == "Nro Documento")
+                {
+                    dgvUserList.Rows.Clear();
+                    users = users.Where(o => o.Document.Contains(searchString));
+                }
+                else if (by == "Nombre")
+                {
+                    dgvUserList.Rows.Clear();
+                    users = users.Where(o => o.FullName.Contains(searchString));
+                }
+                else if(by == "Correo")
+                {
+                    dgvUserList.Rows.Clear();
+                    users = users.Where(o => o.Mail.Contains(searchString));
+                }
+                else if(by == "Rol")
+                {
+                    dgvUserList.Rows.Clear();
+                    int idRole = 0;
+                    foreach (Option_ComboBox ocb in cmbUserRole.Items)
+                    {
+                        if (ocb.text.Contains(searchString))
+                        {
+                            cmbUserRole.SelectedIndex = cmbUserRole.Items.IndexOf(ocb);
+                            idRole = (int)((Option_ComboBox)cmbUserRole.SelectedItem).value;
+                            break;
+                        }
+                    }
+                    users = users.Where(o => o.IdRole == idRole);
+                }
+                else if(by == "Estado")
+                {
+                    dgvUserList.Rows.Clear();
+                    bool state = false;
+                    foreach (Option_ComboBox ocb in cmbUserState.Items)
+                    {
+                        if (ocb.text.Contains(searchString))
+                        {
+                            cmbUserState.SelectedIndex = cmbUserState.Items.IndexOf(ocb);
+                            state = (int)((Option_ComboBox)cmbUserState.SelectedItem).value == 1 ? true : false;
+                            break;
+                        }
+                    }
+                    users = users.Where(o => o.State == state);
+                }
+            }
+            else
+            {
+                dgvUserList.Rows.Clear();
+            }
+
+
+            foreach (AppUser user in users)
+            {
+                string roleName = new BL_Role().GetRole((int)user.IdRole).Description;
+
+                dgvUserList.Rows.Add(new object[] { user.Id, user.Document, user.FullName, user.Mail, user.Password, user.IdRole, roleName,
+                    user.State == true ? 1 : 0, user.State == true ? "ACTIVO" : "INACTIVO", "" });
+            }
+        }
     }
 }

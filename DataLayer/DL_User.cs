@@ -13,17 +13,31 @@ namespace DataLayer
     {
         DBContext.DB_SALE_SYSTEMContext db = new DBContext.DB_SALE_SYSTEMContext();
 
-        public List<AppUser> ToList()
+        public IQueryable<AppUser> ToList()
         {
-            List<AppUser> users = new List<AppUser>();
+            //new IQueryable<AppUser>();
+            IQueryable<AppUser> users;
 
             try
             {
-                users = db.AppUsers.ToList();
+                users =
+                    from u in db.AppUsers
+                    select new AppUser
+                    {
+                        Id = u.Id,
+                        Document = u.Document,
+                        FullName = u.FullName,
+                        Mail = u.Mail,
+                        Password = u.Password,
+                        IdRole = u.IdRole,
+                        State = u.State
+                    };
+
+                //return users;
             }
             catch(Exception ex)
             {
-                users = new List<AppUser>();
+                users = (IQueryable<AppUser>)new List<AppUser>();
             }
 
             return users;

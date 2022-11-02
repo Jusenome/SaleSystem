@@ -29,8 +29,8 @@ namespace PresentationLayer.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlUserData = new System.Windows.Forms.Panel();
             this.txtUserId = new System.Windows.Forms.TextBox();
             this.ibtnUserCancel = new FontAwesome.Sharp.IconButton();
@@ -55,7 +55,6 @@ namespace PresentationLayer.Forms
             this.txtUserSearch = new System.Windows.Forms.TextBox();
             this.cmbUserSearchBy = new System.Windows.Forms.ComboBox();
             this.lblUserSearchBy = new System.Windows.Forms.Label();
-            this.ibtnCleanUserSearch = new FontAwesome.Sharp.IconButton();
             this.lblListTitle = new System.Windows.Forms.Label();
             this.dgvUserList = new System.Windows.Forms.DataGridView();
             this.userId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,7 +67,6 @@ namespace PresentationLayer.Forms
             this.valueState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userEdit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ibtnUserSearch = new FontAwesome.Sharp.IconButton();
             this.pnlUserData.SuspendLayout();
             this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserList)).BeginInit();
@@ -110,6 +108,7 @@ namespace PresentationLayer.Forms
             this.txtUserId.Size = new System.Drawing.Size(20, 23);
             this.txtUserId.TabIndex = 18;
             this.txtUserId.Text = "0";
+            this.txtUserId.Visible = false;
             // 
             // ibtnUserCancel
             // 
@@ -309,60 +308,41 @@ namespace PresentationLayer.Forms
             // pnlSearch
             // 
             this.pnlSearch.BackColor = System.Drawing.Color.White;
+            this.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlSearch.Controls.Add(this.txtUserSearch);
             this.pnlSearch.Controls.Add(this.cmbUserSearchBy);
             this.pnlSearch.Controls.Add(this.lblUserSearchBy);
-            this.pnlSearch.Controls.Add(this.ibtnCleanUserSearch);
             this.pnlSearch.Controls.Add(this.lblListTitle);
             this.pnlSearch.Location = new System.Drawing.Point(283, 32);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(744, 38);
+            this.pnlSearch.Size = new System.Drawing.Size(762, 43);
             this.pnlSearch.TabIndex = 1;
             // 
             // txtUserSearch
             // 
-            this.txtUserSearch.Location = new System.Drawing.Point(492, 9);
+            this.txtUserSearch.Location = new System.Drawing.Point(571, 9);
             this.txtUserSearch.Name = "txtUserSearch";
-            this.txtUserSearch.Size = new System.Drawing.Size(177, 23);
+            this.txtUserSearch.Size = new System.Drawing.Size(186, 23);
             this.txtUserSearch.TabIndex = 19;
+            this.txtUserSearch.TextChanged += new System.EventHandler(this.txtUserSearch_TextChanged);
             // 
             // cmbUserSearchBy
             // 
             this.cmbUserSearchBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUserSearchBy.FormattingEnabled = true;
-            this.cmbUserSearchBy.Location = new System.Drawing.Point(360, 9);
+            this.cmbUserSearchBy.Location = new System.Drawing.Point(427, 9);
             this.cmbUserSearchBy.Name = "cmbUserSearchBy";
-            this.cmbUserSearchBy.Size = new System.Drawing.Size(126, 23);
+            this.cmbUserSearchBy.Size = new System.Drawing.Size(138, 23);
             this.cmbUserSearchBy.TabIndex = 19;
             // 
             // lblUserSearchBy
             // 
             this.lblUserSearchBy.AutoSize = true;
-            this.lblUserSearchBy.Location = new System.Drawing.Point(291, 12);
+            this.lblUserSearchBy.Location = new System.Drawing.Point(358, 12);
             this.lblUserSearchBy.Name = "lblUserSearchBy";
             this.lblUserSearchBy.Size = new System.Drawing.Size(63, 15);
             this.lblUserSearchBy.TabIndex = 19;
             this.lblUserSearchBy.Text = "Buscar Por";
-            // 
-            // ibtnCleanUserSearch
-            // 
-            this.ibtnCleanUserSearch.BackColor = System.Drawing.Color.White;
-            this.ibtnCleanUserSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ibtnCleanUserSearch.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ibtnCleanUserSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnCleanUserSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ibtnCleanUserSearch.ForeColor = System.Drawing.Color.White;
-            this.ibtnCleanUserSearch.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            this.ibtnCleanUserSearch.IconColor = System.Drawing.Color.Black;
-            this.ibtnCleanUserSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnCleanUserSearch.IconSize = 18;
-            this.ibtnCleanUserSearch.Location = new System.Drawing.Point(716, 9);
-            this.ibtnCleanUserSearch.Name = "ibtnCleanUserSearch";
-            this.ibtnCleanUserSearch.Size = new System.Drawing.Size(25, 23);
-            this.ibtnCleanUserSearch.TabIndex = 20;
-            this.ibtnCleanUserSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ibtnCleanUserSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ibtnCleanUserSearch.UseVisualStyleBackColor = false;
             // 
             // lblListTitle
             // 
@@ -377,15 +357,15 @@ namespace PresentationLayer.Forms
             // dgvUserList
             // 
             this.dgvUserList.AllowUserToAddRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUserList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUserList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvUserList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUserList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.userId,
@@ -402,9 +382,9 @@ namespace PresentationLayer.Forms
             this.dgvUserList.MultiSelect = false;
             this.dgvUserList.Name = "dgvUserList";
             this.dgvUserList.ReadOnly = true;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvUserList.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvUserList.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvUserList.RowTemplate.Height = 28;
             this.dgvUserList.Size = new System.Drawing.Size(762, 380);
             this.dgvUserList.TabIndex = 2;
@@ -420,12 +400,14 @@ namespace PresentationLayer.Forms
             // 
             // userDocument
             // 
+            this.userDocument.FillWeight = 19.29519F;
             this.userDocument.HeaderText = "Nro Documento";
             this.userDocument.Name = "userDocument";
             this.userDocument.ReadOnly = true;
             // 
             // userName
             // 
+            this.userName.FillWeight = 456.8528F;
             this.userName.HeaderText = "Nombre";
             this.userName.Name = "userName";
             this.userName.ReadOnly = true;
@@ -433,10 +415,11 @@ namespace PresentationLayer.Forms
             // 
             // userEmail
             // 
+            this.userEmail.FillWeight = 19.29519F;
             this.userEmail.HeaderText = "Correo";
             this.userEmail.Name = "userEmail";
             this.userEmail.ReadOnly = true;
-            this.userEmail.Width = 150;
+            this.userEmail.Width = 170;
             // 
             // userPassword
             // 
@@ -454,10 +437,11 @@ namespace PresentationLayer.Forms
             // 
             // userRole
             // 
+            this.userRole.FillWeight = 19.29519F;
             this.userRole.HeaderText = "Rol";
             this.userRole.Name = "userRole";
             this.userRole.ReadOnly = true;
-            this.userRole.Width = 120;
+            this.userRole.Width = 110;
             // 
             // valueState
             // 
@@ -468,36 +452,19 @@ namespace PresentationLayer.Forms
             // 
             // userState
             // 
+            this.userState.FillWeight = 19.29519F;
             this.userState.HeaderText = "Estado";
             this.userState.Name = "userState";
             this.userState.ReadOnly = true;
+            this.userState.Width = 80;
             // 
             // userEdit
             // 
+            this.userEdit.FillWeight = 65.96645F;
             this.userEdit.HeaderText = "Editar";
             this.userEdit.Name = "userEdit";
             this.userEdit.ReadOnly = true;
-            this.userEdit.Width = 50;
-            // 
-            // ibtnUserSearch
-            // 
-            this.ibtnUserSearch.BackColor = System.Drawing.Color.White;
-            this.ibtnUserSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ibtnUserSearch.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ibtnUserSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnUserSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ibtnUserSearch.ForeColor = System.Drawing.Color.White;
-            this.ibtnUserSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.ibtnUserSearch.IconColor = System.Drawing.Color.Black;
-            this.ibtnUserSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnUserSearch.IconSize = 18;
-            this.ibtnUserSearch.Location = new System.Drawing.Point(965, 41);
-            this.ibtnUserSearch.Name = "ibtnUserSearch";
-            this.ibtnUserSearch.Size = new System.Drawing.Size(25, 23);
-            this.ibtnUserSearch.TabIndex = 19;
-            this.ibtnUserSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ibtnUserSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ibtnUserSearch.UseVisualStyleBackColor = false;
+            this.userEdit.Width = 60;
             // 
             // frmUser
             // 
@@ -506,7 +473,6 @@ namespace PresentationLayer.Forms
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1069, 497);
             this.Controls.Add(this.dgvUserList);
-            this.Controls.Add(this.ibtnUserSearch);
             this.Controls.Add(this.pnlSearch);
             this.Controls.Add(this.pnlUserData);
             this.Name = "frmUser";
@@ -549,8 +515,6 @@ namespace PresentationLayer.Forms
         private System.Windows.Forms.TextBox txtUserSearch;
         private System.Windows.Forms.ComboBox cmbUserSearchBy;
         private System.Windows.Forms.Label lblUserSearchBy;
-        private FontAwesome.Sharp.IconButton ibtnCleanUserSearch;
-        private FontAwesome.Sharp.IconButton ibtnUserSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn userId;
         private System.Windows.Forms.DataGridViewTextBoxColumn userDocument;
         private System.Windows.Forms.DataGridViewTextBoxColumn userName;
@@ -561,5 +525,10 @@ namespace PresentationLayer.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn valueState;
         private System.Windows.Forms.DataGridViewTextBoxColumn userState;
         private System.Windows.Forms.DataGridViewButtonColumn userEdit;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
     }
 }
