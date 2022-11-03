@@ -30,7 +30,12 @@ namespace PresentationLayer.Forms
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlUserData = new System.Windows.Forms.Panel();
             this.txtUserId = new System.Windows.Forms.TextBox();
             this.ibtnUserCancel = new FontAwesome.Sharp.IconButton();
@@ -382,9 +387,9 @@ namespace PresentationLayer.Forms
             this.dgvUserList.MultiSelect = false;
             this.dgvUserList.Name = "dgvUserList";
             this.dgvUserList.ReadOnly = true;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvUserList.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvUserList.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvUserList.RowTemplate.Height = 28;
             this.dgvUserList.Size = new System.Drawing.Size(762, 380);
             this.dgvUserList.TabIndex = 2;
@@ -400,6 +405,8 @@ namespace PresentationLayer.Forms
             // 
             // userDocument
             // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.userDocument.DefaultCellStyle = dataGridViewCellStyle2;
             this.userDocument.FillWeight = 19.29519F;
             this.userDocument.HeaderText = "Nro Documento";
             this.userDocument.Name = "userDocument";
@@ -407,6 +414,8 @@ namespace PresentationLayer.Forms
             // 
             // userName
             // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.userName.DefaultCellStyle = dataGridViewCellStyle3;
             this.userName.FillWeight = 456.8528F;
             this.userName.HeaderText = "Nombre";
             this.userName.Name = "userName";
@@ -415,6 +424,8 @@ namespace PresentationLayer.Forms
             // 
             // userEmail
             // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.userEmail.DefaultCellStyle = dataGridViewCellStyle4;
             this.userEmail.FillWeight = 19.29519F;
             this.userEmail.HeaderText = "Correo";
             this.userEmail.Name = "userEmail";
@@ -437,6 +448,8 @@ namespace PresentationLayer.Forms
             // 
             // userRole
             // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.userRole.DefaultCellStyle = dataGridViewCellStyle5;
             this.userRole.FillWeight = 19.29519F;
             this.userRole.HeaderText = "Rol";
             this.userRole.Name = "userRole";
@@ -452,6 +465,8 @@ namespace PresentationLayer.Forms
             // 
             // userState
             // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.userState.DefaultCellStyle = dataGridViewCellStyle6;
             this.userState.FillWeight = 19.29519F;
             this.userState.HeaderText = "Estado";
             this.userState.Name = "userState";
@@ -515,6 +530,11 @@ namespace PresentationLayer.Forms
         private System.Windows.Forms.TextBox txtUserSearch;
         private System.Windows.Forms.ComboBox cmbUserSearchBy;
         private System.Windows.Forms.Label lblUserSearchBy;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.DataGridViewTextBoxColumn userId;
         private System.Windows.Forms.DataGridViewTextBoxColumn userDocument;
         private System.Windows.Forms.DataGridViewTextBoxColumn userName;
@@ -525,10 +545,5 @@ namespace PresentationLayer.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn valueState;
         private System.Windows.Forms.DataGridViewTextBoxColumn userState;
         private System.Windows.Forms.DataGridViewButtonColumn userEdit;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
     }
 }

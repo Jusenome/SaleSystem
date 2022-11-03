@@ -117,5 +117,7 @@ namespace PresentationLayer
         {
             OpenForm((IconMenuItem)sender, new Forms.frmReport());
         }
+
+        
     }
 }

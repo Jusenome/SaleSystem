@@ -51,7 +51,7 @@ namespace PresentationLayer.Forms
             cmbUserSearchBy.ValueMember = "value";
             cmbUserSearchBy.SelectedIndex = 0;
 
-            SearchBy("", "", e);
+            SearchBy("", "");
             
             
         }
@@ -73,10 +73,8 @@ namespace PresentationLayer.Forms
             string result = blUser.CreateUser(user);
             MessageBox.Show(result);
 
-            
-            frmUser_Load(sender, e);
-
             Clean();
+            frmUser_Load(sender, e);
         }
 
         private void ibtnUserEdit_Click(object sender, EventArgs e)
@@ -94,10 +92,8 @@ namespace PresentationLayer.Forms
             string result = new BL_User().UpdateUser(Convert.ToInt32(txtUserId.Text), user);
             MessageBox.Show(result);
 
-            
-            frmUser_Load(sender, e);
-
             Clean();
+            frmUser_Load(sender, e);
         }
 
         private void ibtnUserCancel_Click(object sender, EventArgs e)
@@ -126,6 +122,8 @@ namespace PresentationLayer.Forms
             cmbUserRole.Items.Clear();
             cmbUserState.Items.Clear();
             cmbUserSearchBy.Items.Clear();
+
+            txtUserDocument.Select();
 
         }
 
@@ -191,10 +189,10 @@ namespace PresentationLayer.Forms
 
         private void txtUserSearch_TextChanged(object sender, EventArgs e)
         {
-            SearchBy(((Option_ComboBox)cmbUserSearchBy.SelectedItem).text, txtUserSearch.Text, e);
+            SearchBy(((Option_ComboBox)cmbUserSearchBy.SelectedItem).text, txtUserSearch.Text);
         }
 
-        private void SearchBy(string by, string searchString, EventArgs e)
+        private void SearchBy(string by, string searchString)
         {
             IQueryable<AppUser> users = new BL_User().ToList();
 
@@ -221,10 +219,11 @@ namespace PresentationLayer.Forms
                     int idRole = 0;
                     foreach (Option_ComboBox ocb in cmbUserRole.Items)
                     {
-                        if (ocb.text.Contains(searchString))
+                        if (ocb.text.Contains(searchString.ToUpper()))
                         {
                             cmbUserRole.SelectedIndex = cmbUserRole.Items.IndexOf(ocb);
                             idRole = (int)((Option_ComboBox)cmbUserRole.SelectedItem).value;
+                            cmbUserRole.SelectedIndex = 0;
                             break;
                         }
                     }
@@ -236,10 +235,11 @@ namespace PresentationLayer.Forms
                     bool state = false;
                     foreach (Option_ComboBox ocb in cmbUserState.Items)
                     {
-                        if (ocb.text.Contains(searchString))
+                        if (ocb.text.Contains(searchString.ToUpper()))
                         {
                             cmbUserState.SelectedIndex = cmbUserState.Items.IndexOf(ocb);
                             state = (int)((Option_ComboBox)cmbUserState.SelectedItem).value == 1 ? true : false;
+                            cmbUserState.SelectedIndex = 0;
                             break;
                         }
                     }

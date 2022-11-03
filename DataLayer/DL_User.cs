@@ -103,8 +103,9 @@ namespace DataLayer
             try
             {
                 user = db.AppUsers.Where(o => o.Id == id).FirstOrDefault();
-
-                if(user.Document == dataUserUpdate.Document)
+                AppUser dataUser = db.AppUsers.Where(o => o.Document == dataUserUpdate.Document).FirstOrDefault();
+                
+                if(dataUser == null || user.Id == dataUser.Id)
                 {
                     user.Id = dataUserUpdate.Id;
                     user.Document = dataUserUpdate.Document;
