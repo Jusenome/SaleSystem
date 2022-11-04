@@ -11,3 +11,16 @@ C:\Users\Edisson\Documents\Development Courses SN\SaleSystem\DataLayer\bin\Relea
 C:\Users\Edisson\Documents\Development Courses SN\SaleSystem\DataLayer\obj\Release\netcoreapp3.1\DataLayer.csproj.CopyComplete
 C:\Users\Edisson\Documents\Development Courses SN\SaleSystem\DataLayer\obj\Release\netcoreapp3.1\DataLayer.dll
 C:\Users\Edisson\Documents\Development Courses SN\SaleSystem\DataLayer\obj\Release\netcoreapp3.1\DataLayer.pdb
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\DataLayer\bin\Release\netcoreapp3.1\DataLayer.deps.json
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\DataLayer\bin\Release\netcoreapp3.1\DataLayer.dll
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\DataLayer\bin\Release\netcoreapp3.1\DataLayer.pdb
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\DataLayer\bin\Release\netcoreapp3.1\EntityLayer.dll
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\DataLayer\bin\Release\netcoreapp3.1\EntityLayer.pdb
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\DataLayer\obj\Release\netcoreapp3.1\DataLayer.csproj.AssemblyReference.cache
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\DataLayer\obj\Release\netcoreapp3.1\DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\DataLayer\obj\Release\netcoreapp3.1\DataLayer.AssemblyInfoInputs.cache
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\DataLayer\obj\Release\netcoreapp3.1\DataLayer.AssemblyInfo.cs
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\DataLayer\obj\Release\netcoreapp3.1\DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\DataLayer\obj\Release\netcoreapp3.1\DataLayer.csproj.CopyComplete
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\DataLayer\obj\Release\netcoreapp3.1\DataLayer.dll
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\DataLayer\obj\Release\netcoreapp3.1\DataLayer.pdb

@@ -80,3 +80,22 @@ C:\Users\Edisson\Documents\Development Courses SN\SaleSystem\PresentationLayer\o
 C:\Users\Edisson\Documents\Development Courses SN\SaleSystem\PresentationLayer\obj\Release\netcoreapp3.1\PresentationLayer.dll
 C:\Users\Edisson\Documents\Development Courses SN\SaleSystem\PresentationLayer\obj\Release\netcoreapp3.1\PresentationLayer.pdb
 C:\Users\Edisson\Documents\Development Courses SN\SaleSystem\PresentationLayer\obj\Release\netcoreapp3.1\PresentationLayer.genruntimeconfig.cache
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\obj\Release\netcoreapp3.1\PresentationLayer.csproj.AssemblyReference.cache
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\obj\Release\netcoreapp3.1\PresentationLayer.Forms.frmCategory.resources
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\obj\Release\netcoreapp3.1\PresentationLayer.Forms.frmClient.resources
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\obj\Release\netcoreapp3.1\PresentationLayer.Forms.frmProduct.resources
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\obj\Release\netcoreapp3.1\PresentationLayer.Forms.frmProvider.resources
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\obj\Release\netcoreapp3.1\PresentationLayer.Forms.frmPurchase.resources
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\obj\Release\netcoreapp3.1\PresentationLayer.Forms.frmPurchaseDetail.resources
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\obj\Release\netcoreapp3.1\PresentationLayer.Forms.frmReport.resources
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\obj\Release\netcoreapp3.1\PresentationLayer.Forms.frmSale.resources
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\obj\Release\netcoreapp3.1\PresentationLayer.Forms.frmSaleDetail.resources
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\obj\Release\netcoreapp3.1\PresentationLayer.Forms.frmUser.resources
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\obj\Release\netcoreapp3.1\PresentationLayer.frmMain.resources
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\obj\Release\netcoreapp3.1\PresentationLayer.formLogin.resources
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\obj\Release\netcoreapp3.1\PresentationLayer.Properties.Resources.resources
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\obj\Release\netcoreapp3.1\PresentationLayer.csproj.GenerateResource.cache
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\obj\Release\netcoreapp3.1\PresentationLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\obj\Release\netcoreapp3.1\PresentationLayer.AssemblyInfoInputs.cache
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\obj\Release\netcoreapp3.1\PresentationLayer.AssemblyInfo.cs
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\obj\Release\netcoreapp3.1\PresentationLayer.csproj.CoreCompileInputs.cache

@@ -63,7 +63,7 @@ namespace PresentationLayer
             this.imiAbout});
             this.menu.Location = new System.Drawing.Point(0, 51);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(1101, 73);
+            this.menu.Size = new System.Drawing.Size(1370, 73);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
@@ -104,7 +104,7 @@ namespace PresentationLayer
             this.subMenuCategory.IconColor = System.Drawing.Color.Black;
             this.subMenuCategory.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuCategory.Name = "subMenuCategory";
-            this.subMenuCategory.Size = new System.Drawing.Size(180, 22);
+            this.subMenuCategory.Size = new System.Drawing.Size(139, 22);
             this.subMenuCategory.Text = "Categorias";
             this.subMenuCategory.Click += new System.EventHandler(this.subMenuCategory_Click);
             // 
@@ -114,7 +114,7 @@ namespace PresentationLayer
             this.subMenuProducts.IconColor = System.Drawing.Color.Black;
             this.subMenuProducts.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuProducts.Name = "subMenuProducts";
-            this.subMenuProducts.Size = new System.Drawing.Size(180, 22);
+            this.subMenuProducts.Size = new System.Drawing.Size(139, 22);
             this.subMenuProducts.Text = "Productos";
             this.subMenuProducts.Click += new System.EventHandler(this.subMenuProducts_Click);
             // 
@@ -124,7 +124,7 @@ namespace PresentationLayer
             this.subMenuProviders.IconColor = System.Drawing.Color.Black;
             this.subMenuProviders.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuProviders.Name = "subMenuProviders";
-            this.subMenuProviders.Size = new System.Drawing.Size(180, 22);
+            this.subMenuProviders.Size = new System.Drawing.Size(139, 22);
             this.subMenuProviders.Text = "Proveedores";
             this.subMenuProviders.Click += new System.EventHandler(this.subMenuProviders_Click);
             // 
@@ -248,7 +248,7 @@ namespace PresentationLayer
             this.menuTitle.Location = new System.Drawing.Point(0, 0);
             this.menuTitle.Name = "menuTitle";
             this.menuTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuTitle.Size = new System.Drawing.Size(1101, 51);
+            this.menuTitle.Size = new System.Drawing.Size(1370, 51);
             this.menuTitle.TabIndex = 1;
             this.menuTitle.Text = "menuStrip2";
             // 
@@ -269,7 +269,7 @@ namespace PresentationLayer
             this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContainer.Location = new System.Drawing.Point(0, 124);
             this.pnlContainer.Name = "pnlContainer";
-            this.pnlContainer.Size = new System.Drawing.Size(1101, 507);
+            this.pnlContainer.Size = new System.Drawing.Size(1370, 507);
             this.pnlContainer.TabIndex = 3;
             // 
             // lblUserName
@@ -288,7 +288,7 @@ namespace PresentationLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1101, 631);
+            this.ClientSize = new System.Drawing.Size(1370, 631);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.pnlContainer);
             this.Controls.Add(this.lblTitle);

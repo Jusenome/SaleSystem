@@ -16,6 +16,11 @@ namespace BusinessLayer
             return oDLCategory.GetCategoryList();
         }
 
+        public Category GetCategoryById(int id)
+        {
+            return oDLCategory.GetCategoryById(id);
+        }
+
         public string CreateCategory(Category category)
         {
             string result = oDLCategory.CreateCategory(category);

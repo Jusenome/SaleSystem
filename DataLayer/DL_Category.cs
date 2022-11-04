@@ -102,11 +102,11 @@ namespace DataLayer
 
                     db.SaveChanges();
 
-                    result = "La categoria " + category.Description + " se ha editado correctamente.";
+                    result = "La categoria " + dataCategoryUpdate.Description + " se ha editado correctamente.";
                 }
                 else
                 {
-                    result = "Error: La categoria: " + category.Description + " no se ha editato. Esta intentando editar la descripción y ya pertenece a otro usuario";
+                    result = "Error: La categoria: " + category.Description + " no se ha editato. Ya existe una categoria con esa descripción";
                 }
 
             }
