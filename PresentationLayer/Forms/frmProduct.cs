@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using ClosedXML.Excel;
 using EntityLayer;
 using PresentationLayer.Utilities;
 using System;
@@ -249,6 +250,64 @@ namespace PresentationLayer.Forms
                 dgvList.Rows.Add(new object[] { product.Id, product.Code, product.Name, product.Description, product.IdCategory, 
                     categoryDescription, product.Stock, product.PurchasePrice, product.SalePrice,
                     product.State == true ? 1 : 0, product.State == true ? "ACTIVO" : "INACTIVO", "" });
+            }
+        }
+
+        private void ibtnExport_Click(object sender, EventArgs e)
+        {
+            if(dgvList.Rows.Count < 1)
+            {
+                MessageBox.Show("No hay datos para exportar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+
+                foreach(DataGridViewColumn column in dgvList.Columns)
+                {
+                    if(column.Name != "Edit" && column.Visible)
+                    {
+                        dt.Columns.Add(column.HeaderText, typeof(string));
+                    }
+                }
+
+                foreach(DataGridViewRow row in dgvList.Rows)
+                {
+                    if (row.Visible)
+                    {
+                        dt.Rows.Add(new object[]
+                        {
+                            row.Cells[1].Value.ToString(),
+                            row.Cells[2].Value.ToString(),
+                            row.Cells[3].Value.ToString(),
+                            row.Cells[5].Value.ToString(),
+                            row.Cells[6].Value.ToString(),
+                            row.Cells[7].Value.ToString(),
+                            row.Cells[8].Value.ToString(),
+                            row.Cells[10].Value.ToString()
+                        });
+                    }
+                }
+
+                SaveFileDialog saveFile = new SaveFileDialog();
+                saveFile.FileName = string.Format("Reporte Producto {0}.xlsx", DateTime.Now.ToString("yyyy-MM-dd HHmmss"));
+                saveFile.Filter = "Excel Files | *.xlsx";
+
+                if(saveFile.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        XLWorkbook wb = new XLWorkbook();
+                        var hoja = wb.Worksheets.Add(dt, "Informe");
+                        hoja.ColumnsUsed().AdjustToContents();
+                        wb.SaveAs(saveFile.FileName);
+                        MessageBox.Show("Reporte generado correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error al general reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
             }
         }
     }

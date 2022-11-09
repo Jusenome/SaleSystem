@@ -57,6 +57,7 @@ namespace PresentationLayer.Forms
             this.lblSearchBy = new System.Windows.Forms.Label();
             this.lblListTitle = new System.Windows.Forms.Label();
             this.pnlSearch = new System.Windows.Forms.Panel();
+            this.ibtnExport = new FontAwesome.Sharp.IconButton();
             this.lblCode = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.dgvList = new System.Windows.Forms.DataGridView();
@@ -231,7 +232,7 @@ namespace PresentationLayer.Forms
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(571, 9);
+            this.txtSearch.Location = new System.Drawing.Point(861, 51);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(186, 23);
             this.txtSearch.TabIndex = 19;
@@ -241,7 +242,7 @@ namespace PresentationLayer.Forms
             // 
             this.cmbSearchBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSearchBy.FormattingEnabled = true;
-            this.cmbSearchBy.Location = new System.Drawing.Point(427, 9);
+            this.cmbSearchBy.Location = new System.Drawing.Point(717, 51);
             this.cmbSearchBy.Name = "cmbSearchBy";
             this.cmbSearchBy.Size = new System.Drawing.Size(138, 23);
             this.cmbSearchBy.TabIndex = 19;
@@ -249,7 +250,7 @@ namespace PresentationLayer.Forms
             // lblSearchBy
             // 
             this.lblSearchBy.AutoSize = true;
-            this.lblSearchBy.Location = new System.Drawing.Point(358, 12);
+            this.lblSearchBy.Location = new System.Drawing.Point(648, 54);
             this.lblSearchBy.Name = "lblSearchBy";
             this.lblSearchBy.Size = new System.Drawing.Size(63, 15);
             this.lblSearchBy.TabIndex = 19;
@@ -269,14 +270,37 @@ namespace PresentationLayer.Forms
             // 
             this.pnlSearch.BackColor = System.Drawing.Color.White;
             this.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlSearch.Controls.Add(this.ibtnExport);
             this.pnlSearch.Controls.Add(this.txtSearch);
             this.pnlSearch.Controls.Add(this.cmbSearchBy);
             this.pnlSearch.Controls.Add(this.lblSearchBy);
             this.pnlSearch.Controls.Add(this.lblListTitle);
-            this.pnlSearch.Location = new System.Drawing.Point(287, 32);
+            this.pnlSearch.Location = new System.Drawing.Point(287, 12);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(1060, 43);
+            this.pnlSearch.Size = new System.Drawing.Size(1060, 88);
             this.pnlSearch.TabIndex = 4;
+            // 
+            // ibtnExport
+            // 
+            this.ibtnExport.BackColor = System.Drawing.Color.Silver;
+            this.ibtnExport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ibtnExport.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ibtnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnExport.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ibtnExport.ForeColor = System.Drawing.Color.Black;
+            this.ibtnExport.IconChar = FontAwesome.Sharp.IconChar.FileDownload;
+            this.ibtnExport.IconColor = System.Drawing.Color.ForestGreen;
+            this.ibtnExport.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnExport.IconSize = 18;
+            this.ibtnExport.Location = new System.Drawing.Point(15, 51);
+            this.ibtnExport.Name = "ibtnExport";
+            this.ibtnExport.Size = new System.Drawing.Size(118, 23);
+            this.ibtnExport.TabIndex = 19;
+            this.ibtnExport.Text = "Exportar";
+            this.ibtnExport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ibtnExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnExport.UseVisualStyleBackColor = false;
+            this.ibtnExport.Click += new System.EventHandler(this.ibtnExport_Click);
             // 
             // lblCode
             // 
@@ -300,6 +324,7 @@ namespace PresentationLayer.Forms
             // dgvList
             // 
             this.dgvList.AllowUserToAddRows = false;
+            this.dgvList.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -323,7 +348,7 @@ namespace PresentationLayer.Forms
             this.valueState,
             this.State,
             this.Edit});
-            this.dgvList.Location = new System.Drawing.Point(287, 104);
+            this.dgvList.Location = new System.Drawing.Point(287, 118);
             this.dgvList.MultiSelect = false;
             this.dgvList.Name = "dgvList";
             this.dgvList.ReadOnly = true;
@@ -331,7 +356,7 @@ namespace PresentationLayer.Forms
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvList.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvList.RowTemplate.Height = 28;
-            this.dgvList.Size = new System.Drawing.Size(1060, 380);
+            this.dgvList.Size = new System.Drawing.Size(1060, 335);
             this.dgvList.TabIndex = 5;
             this.dgvList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellContentClick);
             this.dgvList.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvList_CellPainting);
@@ -467,6 +492,7 @@ namespace PresentationLayer.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1370, 501);
             this.Controls.Add(this.pnlSearch);
             this.Controls.Add(this.dgvList);
@@ -519,5 +545,6 @@ namespace PresentationLayer.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn valueState;
         private System.Windows.Forms.DataGridViewTextBoxColumn State;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
+        private FontAwesome.Sharp.IconButton ibtnExport;
     }
 }
