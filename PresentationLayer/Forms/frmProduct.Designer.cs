@@ -262,9 +262,9 @@ namespace PresentationLayer.Forms
             this.lblListTitle.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblListTitle.Location = new System.Drawing.Point(6, 6);
             this.lblListTitle.Name = "lblListTitle";
-            this.lblListTitle.Size = new System.Drawing.Size(196, 28);
+            this.lblListTitle.Size = new System.Drawing.Size(210, 28);
             this.lblListTitle.TabIndex = 0;
-            this.lblListTitle.Text = "Listado de Usuarios";
+            this.lblListTitle.Text = "Listado de Productos";
             // 
             // pnlSearch
             // 
