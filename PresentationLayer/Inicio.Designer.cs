@@ -48,6 +48,7 @@ namespace PresentationLayer
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.lblUserName = new System.Windows.Forms.Label();
+            this.subMenuBusinessData = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,7 +88,8 @@ namespace PresentationLayer
             this.imiAdmin.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.subMenuCategory,
             this.subMenuProducts,
-            this.subMenuProviders});
+            this.subMenuProviders,
+            this.subMenuBusinessData});
             this.imiAdmin.IconChar = FontAwesome.Sharp.IconChar.ScrewdriverWrench;
             this.imiAdmin.IconColor = System.Drawing.Color.Black;
             this.imiAdmin.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -104,7 +106,7 @@ namespace PresentationLayer
             this.subMenuCategory.IconColor = System.Drawing.Color.Black;
             this.subMenuCategory.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuCategory.Name = "subMenuCategory";
-            this.subMenuCategory.Size = new System.Drawing.Size(139, 22);
+            this.subMenuCategory.Size = new System.Drawing.Size(180, 22);
             this.subMenuCategory.Text = "Categorias";
             this.subMenuCategory.Click += new System.EventHandler(this.subMenuCategory_Click);
             // 
@@ -114,7 +116,7 @@ namespace PresentationLayer
             this.subMenuProducts.IconColor = System.Drawing.Color.Black;
             this.subMenuProducts.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuProducts.Name = "subMenuProducts";
-            this.subMenuProducts.Size = new System.Drawing.Size(139, 22);
+            this.subMenuProducts.Size = new System.Drawing.Size(180, 22);
             this.subMenuProducts.Text = "Productos";
             this.subMenuProducts.Click += new System.EventHandler(this.subMenuProducts_Click);
             // 
@@ -124,7 +126,7 @@ namespace PresentationLayer
             this.subMenuProviders.IconColor = System.Drawing.Color.Black;
             this.subMenuProviders.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuProviders.Name = "subMenuProviders";
-            this.subMenuProviders.Size = new System.Drawing.Size(139, 22);
+            this.subMenuProviders.Size = new System.Drawing.Size(180, 22);
             this.subMenuProviders.Text = "Proveedores";
             this.subMenuProviders.Click += new System.EventHandler(this.subMenuProviders_Click);
             // 
@@ -284,6 +286,13 @@ namespace PresentationLayer
             this.lblUserName.TabIndex = 4;
             this.lblUserName.Text = "Usuario";
             // 
+            // subMenuBusinessData
+            // 
+            this.subMenuBusinessData.Name = "subMenuBusinessData";
+            this.subMenuBusinessData.Size = new System.Drawing.Size(180, 22);
+            this.subMenuBusinessData.Text = "Negocio";
+            this.subMenuBusinessData.Click += new System.EventHandler(this.subMenuBusinessData_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -327,6 +336,7 @@ namespace PresentationLayer
         private FontAwesome.Sharp.IconMenuItem subMenuPurchaseDetail;
         private FontAwesome.Sharp.IconMenuItem subMenuSaleRegister;
         private FontAwesome.Sharp.IconMenuItem subMenuSaleDetail;
+        private System.Windows.Forms.ToolStripMenuItem subMenuBusinessData;
     }
 }
 

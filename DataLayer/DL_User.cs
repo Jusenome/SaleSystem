@@ -11,7 +11,7 @@ namespace DataLayer
 {
     public class DL_User
     {
-        DBContext.DB_SALE_SYSTEMContext db = new DBContext.DB_SALE_SYSTEMContext();
+        DB_SALE_SYSTEMContext db = new DB_SALE_SYSTEMContext();
 
         public IQueryable<AppUser> ToList()
         {
@@ -35,7 +35,7 @@ namespace DataLayer
 
                 //return users;
             }
-            catch(Exception ex)
+            catch
             {
                 users = (IQueryable<AppUser>)new List<AppUser>();
             }
@@ -51,7 +51,7 @@ namespace DataLayer
             {
                 user = db.AppUsers.Where(o => o.Id == id).FirstOrDefault();
             }
-            catch (Exception ex)
+            catch
             {
                 user = new AppUser();
             }

@@ -11,13 +11,13 @@ namespace DataLayer
         public Role GetRole(int idRole)
         {
             Role role = new Role();
-            DBContext.DB_SALE_SYSTEMContext db = new DBContext.DB_SALE_SYSTEMContext();
+            DB_SALE_SYSTEMContext db = new DB_SALE_SYSTEMContext();
 
             try
             {
                 role = db.Roles.Where(o => o.Id == idRole).FirstOrDefault();
             }
-            catch (Exception ex)
+            catch
             {
                 role = new Role();
             }
@@ -28,13 +28,13 @@ namespace DataLayer
         public List<Role> GetRoleList()
         {
             List<Role> roles = new List<Role>();
-            DBContext.DB_SALE_SYSTEMContext db = new DBContext.DB_SALE_SYSTEMContext();
+            DB_SALE_SYSTEMContext db = new DB_SALE_SYSTEMContext();
 
             try
             {
                 roles = db.Roles.ToList();
             }
-            catch(Exception ex)
+            catch
             {
                 roles = new List<Role>();
             }

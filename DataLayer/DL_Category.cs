@@ -8,7 +8,7 @@ namespace DataLayer
 {
     public class DL_Category
     {
-        DBContext.DB_SALE_SYSTEMContext db = new DBContext.DB_SALE_SYSTEMContext();
+        DB_SALE_SYSTEMContext db = new DB_SALE_SYSTEMContext();
 
         public IQueryable<Category> GetCategoryList()
         {
@@ -28,7 +28,7 @@ namespace DataLayer
 
                 //return users;
             }
-            catch (Exception ex)
+            catch
             {
                 categories = (IQueryable<Category>)new List<Category>();
             }
@@ -44,7 +44,7 @@ namespace DataLayer
             {
                 category = db.Categories.Where(o => o.Id == id).FirstOrDefault();
             }
-            catch (Exception ex)
+            catch
             {
                 category = new Category();
             }

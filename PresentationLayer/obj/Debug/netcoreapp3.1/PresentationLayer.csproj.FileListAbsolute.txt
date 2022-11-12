@@ -257,3 +257,4 @@ C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\Sal
 C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\bin\Debug\netcoreapp3.1\Irony.dll
 C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\bin\Debug\netcoreapp3.1\SixLabors.Fonts.dll
 C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\bin\Debug\netcoreapp3.1\XLParser.dll
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\obj\Debug\netcoreapp3.1\PresentationLayer.Forms.frmBusinessData.resources

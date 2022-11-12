@@ -8,7 +8,7 @@ namespace DataLayer
 {
     public class DL_Provider
     {
-        DBContext.DB_SALE_SYSTEMContext db = new DBContext.DB_SALE_SYSTEMContext();
+        DB_SALE_SYSTEMContext db = new DB_SALE_SYSTEMContext();
 
         public IQueryable<Provider> GetProviders()
         {

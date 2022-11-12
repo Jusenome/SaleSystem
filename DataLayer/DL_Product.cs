@@ -8,7 +8,7 @@ namespace DataLayer
 {
     public class DL_Product
     {
-        DBContext.DB_SALE_SYSTEMContext db = new DBContext.DB_SALE_SYSTEMContext();
+        DB_SALE_SYSTEMContext db = new DB_SALE_SYSTEMContext();
 
         public IQueryable<Product> GetProducts()
         {
@@ -34,7 +34,7 @@ namespace DataLayer
 
                 //return users;
             }
-            catch (Exception ex)
+            catch
             {
                 products = (IQueryable<Product>)new List<Product>();
             }
@@ -50,7 +50,7 @@ namespace DataLayer
             {
                 product = db.Products.Where(o => o.Id == id).FirstOrDefault();
             }
-            catch (Exception ex)
+            catch
             {
                 product = new Product();
             }

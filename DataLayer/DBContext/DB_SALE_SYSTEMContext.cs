@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Configuration;
-using EntityLayer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
-namespace DataLayer.DBContext
+namespace EntityLayer
 {
     public partial class DB_SALE_SYSTEMContext : DbContext
     {
@@ -20,6 +19,7 @@ namespace DataLayer.DBContext
         }
 
         public virtual DbSet<AppUser> AppUsers { get; set; }
+        public virtual DbSet<BusinessData> BusinessData { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Client> Clients { get; set; }
         public virtual DbSet<Permission> Permissions { get; set; }
@@ -82,6 +82,35 @@ namespace DataLayer.DBContext
                     .WithMany(p => p.AppUsers)
                     .HasForeignKey(d => d.IdRole)
                     .HasConstraintName("FK__APP_USER__id_rol__403A8C7D");
+            });
+
+            modelBuilder.Entity<BusinessData>(entity =>
+            {
+                entity.ToTable("BUSINESS_DATA");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Address)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("address");
+
+                entity.Property(e => e.Logo).HasColumnName("logo");
+
+                entity.Property(e => e.Nit)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("nit");
+
+                entity.Property(e => e.Nombre)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("nombre");
+
+                entity.Property(e => e.Phone)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("phone");
             });
 
             modelBuilder.Entity<Category>(entity =>

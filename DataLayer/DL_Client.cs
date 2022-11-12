@@ -8,7 +8,7 @@ namespace DataLayer
 {
     public class DL_Client
     {
-        DBContext.DB_SALE_SYSTEMContext db = new DBContext.DB_SALE_SYSTEMContext();
+        DB_SALE_SYSTEMContext db = new DB_SALE_SYSTEMContext();
 
         public IQueryable<Client> GetClients()
         {
@@ -47,7 +47,7 @@ namespace DataLayer
             {
                 client = db.Clients.Where(o => o.Id == id).FirstOrDefault();
             }
-            catch (Exception ex)
+            catch
             {
                 client = new Client();
             }

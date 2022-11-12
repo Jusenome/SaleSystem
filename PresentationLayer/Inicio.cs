@@ -118,6 +118,9 @@ namespace PresentationLayer
             OpenForm((IconMenuItem)sender, new Forms.frmReport());
         }
 
-        
+        private void subMenuBusinessData_Click(object sender, EventArgs e)
+        {
+            OpenForm(imiAdmin, new Forms.frmBusinessData());
+        }
     }
 }

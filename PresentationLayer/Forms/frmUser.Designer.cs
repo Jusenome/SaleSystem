@@ -530,11 +530,6 @@ namespace PresentationLayer.Forms
         private System.Windows.Forms.TextBox txtUserSearch;
         private System.Windows.Forms.ComboBox cmbUserSearchBy;
         private System.Windows.Forms.Label lblUserSearchBy;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.DataGridViewTextBoxColumn userId;
         private System.Windows.Forms.DataGridViewTextBoxColumn userDocument;
         private System.Windows.Forms.DataGridViewTextBoxColumn userName;
