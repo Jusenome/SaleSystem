@@ -12,7 +12,6 @@ namespace DataLayer
 
         public IQueryable<Client> GetClients()
         {
-            //new IQueryable<AppUser>();
             IQueryable<Client> clients;
 
             try
