@@ -40,5 +40,11 @@
     <Compile Update="Login.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Modals\MDProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Modals\MDProvider.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

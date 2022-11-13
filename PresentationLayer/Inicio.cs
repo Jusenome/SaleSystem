@@ -90,7 +90,7 @@ namespace PresentationLayer
 
         private void subMenuPurchaseRegister_Click(object sender, EventArgs e)
         {
-            OpenForm(imiPurchases, new Forms.frmPurchase());
+            OpenForm(imiPurchases, new Forms.frmPurchase(user));
         }
 
         private void subMenuPurchaseDetail_Click(object sender, EventArgs e)

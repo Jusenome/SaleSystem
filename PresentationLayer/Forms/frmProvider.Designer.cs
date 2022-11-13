@@ -29,14 +29,14 @@ namespace PresentationLayer.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlData = new System.Windows.Forms.Panel();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.lblPhone = new System.Windows.Forms.Label();
@@ -57,20 +57,19 @@ namespace PresentationLayer.Forms
             this.lblTitle = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cmbSearchBy = new System.Windows.Forms.ComboBox();
-            this.ibtnExport = new FontAwesome.Sharp.IconButton();
             this.lblSearchBy = new System.Windows.Forms.Label();
             this.pnlSearch = new System.Windows.Forms.Panel();
             this.lblListTitle = new System.Windows.Forms.Label();
             this.dgvList = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Document = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valueState = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valueState = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Document = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlData.SuspendLayout();
             this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
@@ -304,28 +303,6 @@ namespace PresentationLayer.Forms
             this.cmbSearchBy.Size = new System.Drawing.Size(138, 23);
             this.cmbSearchBy.TabIndex = 19;
             // 
-            // ibtnExport
-            // 
-            this.ibtnExport.BackColor = System.Drawing.Color.Silver;
-            this.ibtnExport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ibtnExport.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ibtnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnExport.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ibtnExport.ForeColor = System.Drawing.Color.Black;
-            this.ibtnExport.IconChar = FontAwesome.Sharp.IconChar.FileDownload;
-            this.ibtnExport.IconColor = System.Drawing.Color.ForestGreen;
-            this.ibtnExport.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnExport.IconSize = 18;
-            this.ibtnExport.Location = new System.Drawing.Point(15, 51);
-            this.ibtnExport.Name = "ibtnExport";
-            this.ibtnExport.Size = new System.Drawing.Size(118, 23);
-            this.ibtnExport.TabIndex = 19;
-            this.ibtnExport.Text = "Exportar";
-            this.ibtnExport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ibtnExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ibtnExport.UseVisualStyleBackColor = false;
-            this.ibtnExport.Click += new System.EventHandler(this.ibtnExport_Click);
-            // 
             // lblSearchBy
             // 
             this.lblSearchBy.AutoSize = true;
@@ -339,7 +316,6 @@ namespace PresentationLayer.Forms
             // 
             this.pnlSearch.BackColor = System.Drawing.Color.White;
             this.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlSearch.Controls.Add(this.ibtnExport);
             this.pnlSearch.Controls.Add(this.txtSearch);
             this.pnlSearch.Controls.Add(this.cmbSearchBy);
             this.pnlSearch.Controls.Add(this.lblSearchBy);
@@ -363,15 +339,15 @@ namespace PresentationLayer.Forms
             // 
             this.dgvList.AllowUserToAddRows = false;
             this.dgvList.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -387,83 +363,14 @@ namespace PresentationLayer.Forms
             this.dgvList.MultiSelect = false;
             this.dgvList.Name = "dgvList";
             this.dgvList.ReadOnly = true;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvList.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvList.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvList.RowTemplate.Height = 28;
             this.dgvList.Size = new System.Drawing.Size(856, 349);
             this.dgvList.TabIndex = 11;
             this.dgvList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellContentClick);
             this.dgvList.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvList_CellPainting);
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // Document
-            // 
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Document.DefaultCellStyle = dataGridViewCellStyle18;
-            this.Document.FillWeight = 19.29519F;
-            this.Document.HeaderText = "Nro Documento";
-            this.Document.Name = "Document";
-            this.Document.ReadOnly = true;
-            // 
-            // PName
-            // 
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.PName.DefaultCellStyle = dataGridViewCellStyle19;
-            this.PName.FillWeight = 456.8528F;
-            this.PName.HeaderText = "Nombre";
-            this.PName.Name = "PName";
-            this.PName.ReadOnly = true;
-            this.PName.Width = 200;
-            // 
-            // Mail
-            // 
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Mail.DefaultCellStyle = dataGridViewCellStyle20;
-            this.Mail.FillWeight = 19.29519F;
-            this.Mail.HeaderText = "Correo";
-            this.Mail.Name = "Mail";
-            this.Mail.ReadOnly = true;
-            this.Mail.Width = 170;
-            // 
-            // Address
-            // 
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Address.DefaultCellStyle = dataGridViewCellStyle21;
-            this.Address.HeaderText = "Direccion";
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
-            // 
-            // Phone
-            // 
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Phone.DefaultCellStyle = dataGridViewCellStyle22;
-            this.Phone.HeaderText = "Telefono";
-            this.Phone.Name = "Phone";
-            this.Phone.ReadOnly = true;
-            // 
-            // valueState
-            // 
-            this.valueState.HeaderText = "valueState";
-            this.valueState.Name = "valueState";
-            this.valueState.ReadOnly = true;
-            this.valueState.Visible = false;
-            // 
-            // State
-            // 
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.State.DefaultCellStyle = dataGridViewCellStyle23;
-            this.State.FillWeight = 19.29519F;
-            this.State.HeaderText = "Estado";
-            this.State.Name = "State";
-            this.State.ReadOnly = true;
-            this.State.Width = 80;
             // 
             // Edit
             // 
@@ -472,6 +379,75 @@ namespace PresentationLayer.Forms
             this.Edit.Name = "Edit";
             this.Edit.ReadOnly = true;
             this.Edit.Width = 60;
+            // 
+            // State
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.State.DefaultCellStyle = dataGridViewCellStyle7;
+            this.State.FillWeight = 19.29519F;
+            this.State.HeaderText = "Estado";
+            this.State.Name = "State";
+            this.State.ReadOnly = true;
+            this.State.Width = 80;
+            // 
+            // valueState
+            // 
+            this.valueState.HeaderText = "valueState";
+            this.valueState.Name = "valueState";
+            this.valueState.ReadOnly = true;
+            this.valueState.Visible = false;
+            // 
+            // Phone
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Phone.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Phone.HeaderText = "Telefono";
+            this.Phone.Name = "Phone";
+            this.Phone.ReadOnly = true;
+            // 
+            // Address
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Address.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Address.HeaderText = "Direccion";
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            // 
+            // Mail
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Mail.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Mail.FillWeight = 19.29519F;
+            this.Mail.HeaderText = "Correo";
+            this.Mail.Name = "Mail";
+            this.Mail.ReadOnly = true;
+            this.Mail.Width = 170;
+            // 
+            // PName
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.PName.DefaultCellStyle = dataGridViewCellStyle3;
+            this.PName.FillWeight = 456.8528F;
+            this.PName.HeaderText = "Nombre";
+            this.PName.Name = "PName";
+            this.PName.ReadOnly = true;
+            this.PName.Width = 200;
+            // 
+            // Document
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Document.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Document.FillWeight = 19.29519F;
+            this.Document.HeaderText = "Nro Documento";
+            this.Document.Name = "Document";
+            this.Document.ReadOnly = true;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
             // 
             // frmProvider
             // 
@@ -516,7 +492,6 @@ namespace PresentationLayer.Forms
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ComboBox cmbSearchBy;
-        private FontAwesome.Sharp.IconButton ibtnExport;
         private System.Windows.Forms.Label lblSearchBy;
         private System.Windows.Forms.Panel pnlSearch;
         private System.Windows.Forms.Label lblListTitle;
