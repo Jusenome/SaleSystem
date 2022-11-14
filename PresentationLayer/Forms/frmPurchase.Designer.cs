@@ -36,7 +36,7 @@ namespace PresentationLayer.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlPurchase = new System.Windows.Forms.Panel();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.txtTotalPay = new System.Windows.Forms.TextBox();
             this.ibtnRegister = new FontAwesome.Sharp.IconButton();
             this.ibtnAdd = new FontAwesome.Sharp.IconButton();
             this.dgvPurchaseList = new System.Windows.Forms.DataGridView();
@@ -48,7 +48,8 @@ namespace PresentationLayer.Forms
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.grpbProductInfo = new System.Windows.Forms.GroupBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.lblMessage = new System.Windows.Forms.Label();
+            this.nudAmount = new System.Windows.Forms.NumericUpDown();
             this.lblAmount = new System.Windows.Forms.Label();
             this.txtSalePrice = new System.Windows.Forms.TextBox();
             this.lblSalePrice = new System.Windows.Forms.Label();
@@ -76,7 +77,7 @@ namespace PresentationLayer.Forms
             this.pnlPurchase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchaseList)).BeginInit();
             this.grpbProductInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmount)).BeginInit();
             this.grpbProviderInfo.SuspendLayout();
             this.grpBoxPurchaseInfo.SuspendLayout();
             this.SuspendLayout();
@@ -86,7 +87,7 @@ namespace PresentationLayer.Forms
             this.pnlPurchase.BackColor = System.Drawing.Color.White;
             this.pnlPurchase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlPurchase.Controls.Add(this.lblTotal);
-            this.pnlPurchase.Controls.Add(this.txtTotal);
+            this.pnlPurchase.Controls.Add(this.txtTotalPay);
             this.pnlPurchase.Controls.Add(this.ibtnRegister);
             this.pnlPurchase.Controls.Add(this.ibtnAdd);
             this.pnlPurchase.Controls.Add(this.dgvPurchaseList);
@@ -96,31 +97,31 @@ namespace PresentationLayer.Forms
             this.pnlPurchase.Controls.Add(this.lblTitle);
             this.pnlPurchase.Location = new System.Drawing.Point(43, 12);
             this.pnlPurchase.Name = "pnlPurchase";
-            this.pnlPurchase.Size = new System.Drawing.Size(773, 452);
+            this.pnlPurchase.Size = new System.Drawing.Size(773, 475);
             this.pnlPurchase.TabIndex = 0;
             // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(688, 364);
+            this.lblTotal.Location = new System.Drawing.Point(688, 388);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(74, 15);
             this.lblTotal.TabIndex = 10;
             this.lblTotal.Text = "Total a Pagar";
             // 
-            // txtTotal
+            // txtTotalPay
             // 
-            this.txtTotal.Location = new System.Drawing.Point(688, 382);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(80, 23);
-            this.txtTotal.TabIndex = 9;
+            this.txtTotalPay.Location = new System.Drawing.Point(688, 406);
+            this.txtTotalPay.Name = "txtTotalPay";
+            this.txtTotalPay.Size = new System.Drawing.Size(80, 23);
+            this.txtTotalPay.TabIndex = 9;
             // 
             // ibtnRegister
             // 
             this.ibtnRegister.IconChar = FontAwesome.Sharp.IconChar.None;
             this.ibtnRegister.IconColor = System.Drawing.Color.Black;
             this.ibtnRegister.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnRegister.Location = new System.Drawing.Point(688, 411);
+            this.ibtnRegister.Location = new System.Drawing.Point(688, 435);
             this.ibtnRegister.Name = "ibtnRegister";
             this.ibtnRegister.Size = new System.Drawing.Size(80, 35);
             this.ibtnRegister.TabIndex = 8;
@@ -139,9 +140,11 @@ namespace PresentationLayer.Forms
             this.ibtnAdd.Text = "Agregar";
             this.ibtnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.ibtnAdd.UseVisualStyleBackColor = true;
+            this.ibtnAdd.Click += new System.EventHandler(this.ibtnAdd_Click);
             // 
             // dgvPurchaseList
             // 
+            this.dgvPurchaseList.AllowUserToAddRows = false;
             this.dgvPurchaseList.BackgroundColor = System.Drawing.Color.White;
             this.dgvPurchaseList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPurchaseList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -152,11 +155,13 @@ namespace PresentationLayer.Forms
             this.Amount,
             this.SubTotal,
             this.Delete});
-            this.dgvPurchaseList.Location = new System.Drawing.Point(4, 210);
+            this.dgvPurchaseList.Location = new System.Drawing.Point(4, 233);
             this.dgvPurchaseList.Name = "dgvPurchaseList";
             this.dgvPurchaseList.RowTemplate.Height = 25;
             this.dgvPurchaseList.Size = new System.Drawing.Size(678, 237);
             this.dgvPurchaseList.TabIndex = 6;
+            this.dgvPurchaseList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPurchaseList_CellContentClick);
+            this.dgvPurchaseList.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvPurchaseList_CellPainting);
             // 
             // Id
             // 
@@ -208,7 +213,8 @@ namespace PresentationLayer.Forms
             // 
             // grpbProductInfo
             // 
-            this.grpbProductInfo.Controls.Add(this.numericUpDown1);
+            this.grpbProductInfo.Controls.Add(this.lblMessage);
+            this.grpbProductInfo.Controls.Add(this.nudAmount);
             this.grpbProductInfo.Controls.Add(this.lblAmount);
             this.grpbProductInfo.Controls.Add(this.txtSalePrice);
             this.grpbProductInfo.Controls.Add(this.lblSalePrice);
@@ -222,28 +228,36 @@ namespace PresentationLayer.Forms
             this.grpbProductInfo.Controls.Add(this.lblProductCode);
             this.grpbProductInfo.Location = new System.Drawing.Point(4, 124);
             this.grpbProductInfo.Name = "grpbProductInfo";
-            this.grpbProductInfo.Size = new System.Drawing.Size(678, 80);
+            this.grpbProductInfo.Size = new System.Drawing.Size(678, 103);
             this.grpbProductInfo.TabIndex = 5;
             this.grpbProductInfo.TabStop = false;
             this.grpbProductInfo.Text = "Información de Producto";
             // 
-            // numericUpDown1
+            // lblMessage
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(569, 39);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.Location = new System.Drawing.Point(7, 82);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(0, 15);
+            this.lblMessage.TabIndex = 15;
+            // 
+            // nudAmount
+            // 
+            this.nudAmount.Location = new System.Drawing.Point(569, 39);
+            this.nudAmount.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.nudAmount.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(73, 23);
-            this.numericUpDown1.TabIndex = 14;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.nudAmount.Name = "nudAmount";
+            this.nudAmount.Size = new System.Drawing.Size(73, 23);
+            this.nudAmount.TabIndex = 14;
+            this.nudAmount.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -264,6 +278,7 @@ namespace PresentationLayer.Forms
             this.txtSalePrice.Name = "txtSalePrice";
             this.txtSalePrice.Size = new System.Drawing.Size(102, 23);
             this.txtSalePrice.TabIndex = 12;
+            this.txtSalePrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSalePrice_KeyPress);
             // 
             // lblSalePrice
             // 
@@ -289,6 +304,7 @@ namespace PresentationLayer.Forms
             this.txtPurchasePrice.Name = "txtPurchasePrice";
             this.txtPurchasePrice.Size = new System.Drawing.Size(102, 23);
             this.txtPurchasePrice.TabIndex = 8;
+            this.txtPurchasePrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPurchasePrice_KeyPress);
             // 
             // txtProductId
             // 
@@ -296,6 +312,7 @@ namespace PresentationLayer.Forms
             this.txtProductId.Name = "txtProductId";
             this.txtProductId.Size = new System.Drawing.Size(36, 23);
             this.txtProductId.TabIndex = 7;
+            this.txtProductId.Text = "0";
             this.txtProductId.Visible = false;
             // 
             // ibtnSearchProduct
@@ -321,11 +338,11 @@ namespace PresentationLayer.Forms
             // 
             // txtProductCode
             // 
-            this.txtProductCode.Enabled = false;
             this.txtProductCode.Location = new System.Drawing.Point(7, 41);
             this.txtProductCode.Name = "txtProductCode";
             this.txtProductCode.Size = new System.Drawing.Size(121, 23);
             this.txtProductCode.TabIndex = 4;
+            this.txtProductCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtProductCode_KeyDown);
             // 
             // lblProductName
             // 
@@ -366,6 +383,7 @@ namespace PresentationLayer.Forms
             this.txtProviderId.Name = "txtProviderId";
             this.txtProviderId.Size = new System.Drawing.Size(36, 23);
             this.txtProviderId.TabIndex = 7;
+            this.txtProviderId.Text = "0";
             this.txtProviderId.Visible = false;
             // 
             // ibtnSearchProvider
@@ -487,7 +505,7 @@ namespace PresentationLayer.Forms
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchaseList)).EndInit();
             this.grpbProductInfo.ResumeLayout(false);
             this.grpbProductInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmount)).EndInit();
             this.grpbProviderInfo.ResumeLayout(false);
             this.grpbProviderInfo.PerformLayout();
             this.grpBoxPurchaseInfo.ResumeLayout(false);
@@ -524,10 +542,10 @@ namespace PresentationLayer.Forms
         private System.Windows.Forms.TextBox txtPurchasePrice;
         private System.Windows.Forms.TextBox txtSalePrice;
         private System.Windows.Forms.Label lblAmount;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudAmount;
         private System.Windows.Forms.DataGridView dgvPurchaseList;
         private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.TextBox txtTotalPay;
         private FontAwesome.Sharp.IconButton ibtnRegister;
         private FontAwesome.Sharp.IconButton ibtnAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
@@ -537,5 +555,6 @@ namespace PresentationLayer.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.Label lblMessage;
     }
 }
