@@ -110,6 +110,9 @@ namespace DataLayer
                     product.Name = dataProductUpdate.Name;
                     product.Description = dataProductUpdate.Description;
                     product.IdCategory = dataProductUpdate.IdCategory;
+                    product.Stock = dataProductUpdate.Stock;
+                    product.PurchasePrice = dataProductUpdate.PurchasePrice;
+                    product.SalePrice = dataProductUpdate.SalePrice;
                     product.State = dataProductUpdate.State;
 
                     db.SaveChanges();

@@ -127,6 +127,7 @@ namespace PresentationLayer.Forms
             this.ibtnRegister.TabIndex = 8;
             this.ibtnRegister.Text = "Registrar";
             this.ibtnRegister.UseVisualStyleBackColor = true;
+            this.ibtnRegister.Click += new System.EventHandler(this.ibtnRegister_Click);
             // 
             // ibtnAdd
             // 

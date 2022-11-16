@@ -16,6 +16,11 @@ namespace BusinessLayer
             return oDLProduct.GetProducts();
         }
 
+        public Product GetProductById(int id)
+        {
+            return oDLProduct.GetProductById(id);
+        }
+
         public string CreateProduct(Product product)
         {
             string result = oDLProduct.CreateProduct(product);

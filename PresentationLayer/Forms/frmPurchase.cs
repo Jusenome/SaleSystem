@@ -281,5 +281,87 @@ namespace PresentationLayer.Forms
                 }
             }
         }
+
+        private void ibtnRegister_Click(object sender, EventArgs e)
+        {
+            if(Convert.ToInt32(txtProviderId.Text) == 0)
+            {
+                MessageBox.Show("Debe seleccionar un proveedor", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if(dgvPurchaseList.Rows.Count < 1)
+            {
+                MessageBox.Show("Debe seleccionar productos para la compra", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            try
+            {
+                BL_Purchase blPurchase = new BL_Purchase();
+                BL_PurchaseDetail blPurchaseDetail = new BL_PurchaseDetail();
+                BL_Product blProduct = new BL_Product();
+                DB_SALE_SYSTEMContext db = new DB_SALE_SYSTEMContext();
+
+                int iNumber = db.Purchases.ToList().Count() + 1; // Cambiar posteriosmente para que la consulta se haga en DL_Purchase
+                string invoiceNumber = string.Format("{0:00000}", iNumber);
+                Purchase purchase = new Purchase()
+                {
+                    IdUser = oUsuario.Id,
+                    IdProvider = Convert.ToInt32(txtProviderId.Text),
+                    DocumentType = ((Option_ComboBox)cmbDocumentType.SelectedItem).text,
+                    InvoiceNumber = invoiceNumber,
+                    Total = Convert.ToDecimal(txtTotalPay.Text)
+                };
+                string resultPurchase = blPurchase.CreatePurchase(purchase);
+
+                int idPurchase = db.Purchases.Where(o => o.InvoiceNumber == invoiceNumber).FirstOrDefault().Id; // Cambiar posteriosmente para que la consulta se haga en DL_Purchase
+                foreach (DataGridViewRow row in dgvPurchaseList.Rows)
+                {
+                    PurchaseDetail purchaseDetail = new PurchaseDetail()
+                    {
+                        IdPurchase = idPurchase,
+                        IdProduct = Convert.ToInt32(row.Cells["Id"].Value),
+                        PurchasePrice = Convert.ToDecimal(row.Cells["PurchasePrice"].Value),
+                        SalePrice = Convert.ToDecimal(row.Cells["SalePrice"].Value),
+                        Quantity = Convert.ToInt32(row.Cells["Amount"].Value),
+                        Total = Convert.ToDecimal(row.Cells["SubTotal"].Value)
+                    };
+                    string resultPurchaseDetail = blPurchaseDetail.CreatePurchaseDetail(purchaseDetail);
+
+                    int idProduct = Convert.ToInt32(row.Cells["Id"].Value);
+                    Product product = blProduct.GetProductById(idProduct);
+                    Product updateProduct = new Product()
+                    {
+                        Id = product.Id,
+                        Code = product.Code,
+                        Name = product.Name,
+                        Description = product.Description,
+                        IdCategory = product.IdCategory,
+                        Stock = product.Stock + Convert.ToInt32(row.Cells["Amount"].Value),
+                        PurchasePrice = Convert.ToDecimal(row.Cells["PurchasePrice"].Value),
+                        SalePrice = Convert.ToDecimal(row.Cells["SalePrice"].Value),
+                        State = product.State
+                    };
+                    string resultProduct = blProduct.UpdateProduct(idProduct, updateProduct);
+                }
+
+                MessageBox.Show("Comprada realizada exitosamente.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                CleanAfterRegister();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void CleanAfterRegister()
+        {
+            txtProviderId.Text = "0";
+            txtProviderName.Text = "";
+            txtProviderNit.Text = "";
+            txtTotalPay.Text = "";
+            dgvPurchaseList.Rows.Clear();
+            txtProductCode.Select();
+        }
     }
 }

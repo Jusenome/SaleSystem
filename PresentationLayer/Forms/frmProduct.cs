@@ -74,6 +74,9 @@ namespace PresentationLayer.Forms
 
         private void ibtnEdit_Click(object sender, EventArgs e)
         {
+            BL_Product blProduct = new BL_Product();
+            Product searchProduct = blProduct.GetProductById(Convert.ToInt32(txtId.Text));
+
             Product product = new Product()
             {
                 Id = Convert.ToInt32(txtId.Text),
@@ -81,6 +84,9 @@ namespace PresentationLayer.Forms
                 Name = txtName.Text,
                 Description = txtDescription.Text,
                 IdCategory = (int)((Option_ComboBox)cmbCategory.SelectedItem).value,
+                Stock = searchProduct.Stock,
+                PurchasePrice = searchProduct.PurchasePrice,
+                SalePrice = searchProduct.SalePrice,
                 State = (int)((Option_ComboBox)cmbUserState.SelectedItem).value == 1 ? true : false
             };
 
