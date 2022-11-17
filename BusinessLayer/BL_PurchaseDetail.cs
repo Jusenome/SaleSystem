@@ -10,6 +10,11 @@ namespace BusinessLayer
     {
         DL_PurchaseDetail oDLPurchaseDetail = new DL_PurchaseDetail();
 
+        public List<PurchaseDetail> GetPurchaseDetailsByPurchaseId(int purchaseId)
+        {
+            return oDLPurchaseDetail.GetPurchaseDetailsByPurchaseId(purchaseId);
+        }
+
         public string CreatePurchaseDetail(PurchaseDetail purchaseDetail)
         {
             return oDLPurchaseDetail.CreatePurchaseDetail(purchaseDetail);

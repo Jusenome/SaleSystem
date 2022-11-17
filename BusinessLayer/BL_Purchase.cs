@@ -10,6 +10,11 @@ namespace BusinessLayer
     {
         private DL_Purchase oDLPrurchase = new DL_Purchase();
 
+        public Purchase GetPurchaseByInvoiceNumber(string invoiceNumber)
+        {
+            return oDLPrurchase.GetPurchaseByInvoiceNumber(invoiceNumber);
+        }
+
         public string CreatePurchase(Purchase purchase)
         {
             return oDLPrurchase.CreatePurchase(purchase);

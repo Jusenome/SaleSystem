@@ -9,6 +9,12 @@ namespace DataLayer
     public class DL_PurchaseDetail
     {
         DB_SALE_SYSTEMContext db = new DB_SALE_SYSTEMContext();
+
+        public List<PurchaseDetail> GetPurchaseDetailsByPurchaseId(int purchaseId)
+        {
+            return db.PurchaseDetails.Where(o => o.IdPurchase == purchaseId).ToList();
+        }
+
         public string CreatePurchaseDetail(PurchaseDetail newPurchaseDetail)
         {
             string result = "";

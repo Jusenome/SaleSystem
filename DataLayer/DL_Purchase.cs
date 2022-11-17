@@ -9,6 +9,12 @@ namespace DataLayer
     public class DL_Purchase
     {
         DB_SALE_SYSTEMContext db = new DB_SALE_SYSTEMContext();
+
+        public Purchase GetPurchaseByInvoiceNumber(string invoiceNumber)
+        {
+            return db.Purchases.Where(o => o.InvoiceNumber == invoiceNumber).FirstOrDefault();
+        }
+
         public string CreatePurchase(Purchase newPurchase)
         {
             string result = "";

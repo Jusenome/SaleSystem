@@ -16,6 +16,11 @@ namespace BusinessLayer
             return oDLProvider.GetProviders();
         }
 
+        public Provider GetProviderById(int id)
+        {
+            return oDLProvider.GetProviderById(id);
+        }
+
         public string CreateProvider(Provider provider)
         {
             string result = oDLProvider.CreateProvider(provider);

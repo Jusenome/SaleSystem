@@ -16,6 +16,11 @@ namespace BusinessLayer
             return oDLUser.ToList();
         }
 
+        public AppUser GetUserById(int id)
+        {
+            return oDLUser.GetUserById(id);
+        }
+
         public string CreateUser(AppUser user)
         {
            string result = oDLUser.CreateUser(user);

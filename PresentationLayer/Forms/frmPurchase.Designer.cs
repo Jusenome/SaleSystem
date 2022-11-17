@@ -134,9 +134,9 @@ namespace PresentationLayer.Forms
             this.ibtnAdd.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.ibtnAdd.IconColor = System.Drawing.Color.DarkGreen;
             this.ibtnAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnAdd.Location = new System.Drawing.Point(688, 124);
+            this.ibtnAdd.Location = new System.Drawing.Point(688, 132);
             this.ibtnAdd.Name = "ibtnAdd";
-            this.ibtnAdd.Size = new System.Drawing.Size(80, 80);
+            this.ibtnAdd.Size = new System.Drawing.Size(80, 95);
             this.ibtnAdd.TabIndex = 7;
             this.ibtnAdd.Text = "Agregar";
             this.ibtnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;

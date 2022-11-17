@@ -359,8 +359,8 @@ namespace PresentationLayer.Forms
             txtProviderId.Text = "0";
             txtProviderName.Text = "";
             txtProviderNit.Text = "";
-            txtTotalPay.Text = "";
             dgvPurchaseList.Rows.Clear();
+            CalculateTotal();
             txtProductCode.Select();
         }
     }
