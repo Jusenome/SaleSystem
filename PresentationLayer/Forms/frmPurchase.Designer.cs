@@ -29,11 +29,11 @@ namespace PresentationLayer.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlPurchase = new System.Windows.Forms.Panel();
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtTotalPay = new System.Windows.Forms.TextBox();
@@ -105,9 +105,9 @@ namespace PresentationLayer.Forms
             this.lblTotal.AutoSize = true;
             this.lblTotal.Location = new System.Drawing.Point(688, 388);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(74, 15);
+            this.lblTotal.Size = new System.Drawing.Size(77, 15);
             this.lblTotal.TabIndex = 10;
-            this.lblTotal.Text = "Total a Pagar";
+            this.lblTotal.Text = "Total a Pagar:";
             // 
             // txtTotalPay
             // 
@@ -166,24 +166,24 @@ namespace PresentationLayer.Forms
             // 
             // Id
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Id.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Id.DefaultCellStyle = dataGridViewCellStyle6;
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
             this.Id.Visible = false;
             // 
             // Product
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Product.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Product.DefaultCellStyle = dataGridViewCellStyle7;
             this.Product.HeaderText = "Producto";
             this.Product.Name = "Product";
             this.Product.Width = 235;
             // 
             // PurchasePrice
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.PurchasePrice.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.PurchasePrice.DefaultCellStyle = dataGridViewCellStyle8;
             this.PurchasePrice.HeaderText = "Precio Compra";
             this.PurchasePrice.Name = "PurchasePrice";
             // 
@@ -195,15 +195,15 @@ namespace PresentationLayer.Forms
             // 
             // Amount
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Amount.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Amount.DefaultCellStyle = dataGridViewCellStyle9;
             this.Amount.HeaderText = "Cantidad";
             this.Amount.Name = "Amount";
             // 
             // SubTotal
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SubTotal.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SubTotal.DefaultCellStyle = dataGridViewCellStyle10;
             this.SubTotal.HeaderText = "Sub Total";
             this.SubTotal.Name = "SubTotal";
             // 
@@ -269,9 +269,9 @@ namespace PresentationLayer.Forms
             this.lblAmount.AutoSize = true;
             this.lblAmount.Location = new System.Drawing.Point(567, 19);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(55, 15);
+            this.lblAmount.Size = new System.Drawing.Size(58, 15);
             this.lblAmount.TabIndex = 13;
-            this.lblAmount.Text = "Cantidad";
+            this.lblAmount.Text = "Cantidad:";
             // 
             // txtSalePrice
             // 
@@ -286,18 +286,18 @@ namespace PresentationLayer.Forms
             this.lblSalePrice.AutoSize = true;
             this.lblSalePrice.Location = new System.Drawing.Point(460, 19);
             this.lblSalePrice.Name = "lblSalePrice";
-            this.lblSalePrice.Size = new System.Drawing.Size(72, 15);
+            this.lblSalePrice.Size = new System.Drawing.Size(75, 15);
             this.lblSalePrice.TabIndex = 11;
-            this.lblSalePrice.Text = "Precio Venta";
+            this.lblSalePrice.Text = "Precio Venta:";
             // 
             // lblPurchasePrice
             // 
             this.lblPurchasePrice.AutoSize = true;
             this.lblPurchasePrice.Location = new System.Drawing.Point(352, 19);
             this.lblPurchasePrice.Name = "lblPurchasePrice";
-            this.lblPurchasePrice.Size = new System.Drawing.Size(86, 15);
+            this.lblPurchasePrice.Size = new System.Drawing.Size(89, 15);
             this.lblPurchasePrice.TabIndex = 10;
-            this.lblPurchasePrice.Text = "Precio Compra";
+            this.lblPurchasePrice.Text = "Precio Compra:";
             // 
             // txtPurchasePrice
             // 

@@ -100,7 +100,7 @@ namespace PresentationLayer
 
         private void subMenuSaleRegister_Click(object sender, EventArgs e)
         {
-            OpenForm(imiSales, new Forms.frmSale());
+            OpenForm(imiSales, new Forms.frmSale(user));
         }
 
         private void subMenuSaleDetail_Click(object sender, EventArgs e)

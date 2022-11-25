@@ -263,3 +263,4 @@ C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\Sal
 C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
 C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\bin\Debug\netcoreapp3.1\itextsharp.dll
 C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\bin\Debug\netcoreapp3.1\itextsharp.xmlworker.dll
+C:\Users\Edisson\Documents\Development Courses SN\Proyectos\C#\Windows Forms\SaleSystem\PresentationLayer\obj\Debug\netcoreapp3.1\PresentationLayer.Modals.MDClient.resources
