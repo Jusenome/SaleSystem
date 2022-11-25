@@ -43,7 +43,6 @@ namespace PresentationLayer.Forms
             }
 
             txtTotalPay.Text = purchase.Total.ToString();
-
         }
 
         private void ibtnClean_Click(object sender, EventArgs e)

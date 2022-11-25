@@ -16,6 +16,11 @@ namespace BusinessLayer
             return oDLClient.GetClients();
         }
 
+        public Client GetClientByDocument(string document)
+        {
+            return oDLClient.GetClientByDocument(document);
+        }
+
         public string CreateClient(Client client)
         {
             string result = oDLClient.CreateClient(client);

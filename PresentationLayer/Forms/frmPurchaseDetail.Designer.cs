@@ -29,19 +29,15 @@ namespace PresentationLayer.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlPurchaseDetail = new System.Windows.Forms.Panel();
             this.ibtnDownload = new FontAwesome.Sharp.IconButton();
             this.txtTotalPay = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.dgvPurchaseList = new System.Windows.Forms.DataGridView();
-            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PurchasePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpbProviderInfo = new System.Windows.Forms.GroupBox();
             this.txtInvoiceInGrpProvider = new System.Windows.Forms.TextBox();
             this.txtProviderName = new System.Windows.Forms.TextBox();
@@ -60,6 +56,10 @@ namespace PresentationLayer.Forms
             this.txtSerarch = new System.Windows.Forms.TextBox();
             this.lblInvoiceNumber = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PurchasePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlPurchaseDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchaseList)).BeginInit();
             this.grpbProviderInfo.SuspendLayout();
@@ -113,9 +113,9 @@ namespace PresentationLayer.Forms
             this.lblTotal.AutoSize = true;
             this.lblTotal.Location = new System.Drawing.Point(10, 458);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(32, 15);
+            this.lblTotal.Size = new System.Drawing.Size(35, 15);
             this.lblTotal.TabIndex = 8;
-            this.lblTotal.Text = "Total";
+            this.lblTotal.Text = "Total:";
             // 
             // dgvPurchaseList
             // 
@@ -132,37 +132,6 @@ namespace PresentationLayer.Forms
             this.dgvPurchaseList.RowTemplate.Height = 25;
             this.dgvPurchaseList.Size = new System.Drawing.Size(601, 208);
             this.dgvPurchaseList.TabIndex = 7;
-            // 
-            // Product
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Product.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Product.HeaderText = "Producto";
-            this.Product.Name = "Product";
-            this.Product.Width = 200;
-            // 
-            // PurchasePrice
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.PurchasePrice.DefaultCellStyle = dataGridViewCellStyle2;
-            this.PurchasePrice.HeaderText = "Precio Compra";
-            this.PurchasePrice.Name = "PurchasePrice";
-            this.PurchasePrice.Width = 130;
-            // 
-            // Amount
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Amount.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Amount.HeaderText = "Cantidad";
-            this.Amount.Name = "Amount";
-            // 
-            // Subtotal
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Subtotal.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Subtotal.HeaderText = "Sub Total";
-            this.Subtotal.Name = "Subtotal";
-            this.Subtotal.Width = 130;
             // 
             // grpbProviderInfo
             // 
@@ -208,9 +177,9 @@ namespace PresentationLayer.Forms
             this.lblProviderName.AutoSize = true;
             this.lblProviderName.Location = new System.Drawing.Point(217, 23);
             this.lblProviderName.Name = "lblProviderName";
-            this.lblProviderName.Size = new System.Drawing.Size(51, 15);
+            this.lblProviderName.Size = new System.Drawing.Size(54, 15);
             this.lblProviderName.TabIndex = 1;
-            this.lblProviderName.Text = "Nombre";
+            this.lblProviderName.Text = "Nombre:";
             // 
             // lblNit
             // 
@@ -342,6 +311,37 @@ namespace PresentationLayer.Forms
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Detalle Compra";
             // 
+            // Subtotal
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Subtotal.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Subtotal.HeaderText = "Sub Total";
+            this.Subtotal.Name = "Subtotal";
+            this.Subtotal.Width = 130;
+            // 
+            // Amount
+            // 
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Amount.DefaultCellStyle = dataGridViewCellStyle10;
+            this.Amount.HeaderText = "Cantidad";
+            this.Amount.Name = "Amount";
+            // 
+            // PurchasePrice
+            // 
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.PurchasePrice.DefaultCellStyle = dataGridViewCellStyle11;
+            this.PurchasePrice.HeaderText = "Precio Compra";
+            this.PurchasePrice.Name = "PurchasePrice";
+            this.PurchasePrice.Width = 130;
+            // 
+            // Product
+            // 
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Product.DefaultCellStyle = dataGridViewCellStyle12;
+            this.Product.HeaderText = "Producto";
+            this.Product.Name = "Product";
+            this.Product.Width = 200;
+            // 
             // frmPurchaseDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -380,15 +380,15 @@ namespace PresentationLayer.Forms
         private System.Windows.Forms.TextBox txtTotalPay;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.DataGridView dgvPurchaseList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Product;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PurchasePrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
         private System.Windows.Forms.GroupBox grpbProviderInfo;
         private System.Windows.Forms.TextBox txtInvoiceInGrpProvider;
         private System.Windows.Forms.TextBox txtProviderName;
         private System.Windows.Forms.TextBox txtNit;
         private System.Windows.Forms.Label lblProviderName;
         private System.Windows.Forms.Label lblNit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PurchasePrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
     }
 }

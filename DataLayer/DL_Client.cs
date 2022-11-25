@@ -39,13 +39,13 @@ namespace DataLayer
             return clients;
         }
 
-        public Client GetClientById(int id)
+        public Client GetClientByDocument(string document)
         {
             Client client = new Client();
 
             try
             {
-                client = db.Clients.Where(o => o.Id == id).FirstOrDefault();
+                client = db.Clients.Where(o => o.Document == document).FirstOrDefault();
             }
             catch
             {
