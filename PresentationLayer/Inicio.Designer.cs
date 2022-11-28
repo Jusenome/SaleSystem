@@ -35,6 +35,7 @@ namespace PresentationLayer
             this.subMenuCategory = new FontAwesome.Sharp.IconMenuItem();
             this.subMenuProducts = new FontAwesome.Sharp.IconMenuItem();
             this.subMenuProviders = new FontAwesome.Sharp.IconMenuItem();
+            this.subMenuBusinessData = new System.Windows.Forms.ToolStripMenuItem();
             this.imiPurchases = new FontAwesome.Sharp.IconMenuItem();
             this.subMenuPurchaseRegister = new FontAwesome.Sharp.IconMenuItem();
             this.subMenuPurchaseDetail = new FontAwesome.Sharp.IconMenuItem();
@@ -43,12 +44,13 @@ namespace PresentationLayer
             this.subMenuSaleRegister = new FontAwesome.Sharp.IconMenuItem();
             this.subMenuSaleDetail = new FontAwesome.Sharp.IconMenuItem();
             this.imiReports = new FontAwesome.Sharp.IconMenuItem();
+            this.subMenuReportPurchases = new System.Windows.Forms.ToolStripMenuItem();
+            this.subMenuReportSales = new System.Windows.Forms.ToolStripMenuItem();
             this.imiAbout = new FontAwesome.Sharp.IconMenuItem();
             this.menuTitle = new System.Windows.Forms.MenuStrip();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.lblUserName = new System.Windows.Forms.Label();
-            this.subMenuBusinessData = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +66,7 @@ namespace PresentationLayer
             this.imiAbout});
             this.menu.Location = new System.Drawing.Point(0, 51);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(1370, 73);
+            this.menu.Size = new System.Drawing.Size(1426, 73);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
@@ -106,7 +108,7 @@ namespace PresentationLayer
             this.subMenuCategory.IconColor = System.Drawing.Color.Black;
             this.subMenuCategory.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuCategory.Name = "subMenuCategory";
-            this.subMenuCategory.Size = new System.Drawing.Size(180, 22);
+            this.subMenuCategory.Size = new System.Drawing.Size(139, 22);
             this.subMenuCategory.Text = "Categorias";
             this.subMenuCategory.Click += new System.EventHandler(this.subMenuCategory_Click);
             // 
@@ -116,7 +118,7 @@ namespace PresentationLayer
             this.subMenuProducts.IconColor = System.Drawing.Color.Black;
             this.subMenuProducts.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuProducts.Name = "subMenuProducts";
-            this.subMenuProducts.Size = new System.Drawing.Size(180, 22);
+            this.subMenuProducts.Size = new System.Drawing.Size(139, 22);
             this.subMenuProducts.Text = "Productos";
             this.subMenuProducts.Click += new System.EventHandler(this.subMenuProducts_Click);
             // 
@@ -126,9 +128,16 @@ namespace PresentationLayer
             this.subMenuProviders.IconColor = System.Drawing.Color.Black;
             this.subMenuProviders.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuProviders.Name = "subMenuProviders";
-            this.subMenuProviders.Size = new System.Drawing.Size(180, 22);
+            this.subMenuProviders.Size = new System.Drawing.Size(139, 22);
             this.subMenuProviders.Text = "Proveedores";
             this.subMenuProviders.Click += new System.EventHandler(this.subMenuProviders_Click);
+            // 
+            // subMenuBusinessData
+            // 
+            this.subMenuBusinessData.Name = "subMenuBusinessData";
+            this.subMenuBusinessData.Size = new System.Drawing.Size(139, 22);
+            this.subMenuBusinessData.Text = "Negocio";
+            this.subMenuBusinessData.Click += new System.EventHandler(this.subMenuBusinessData_Click);
             // 
             // imiPurchases
             // 
@@ -219,6 +228,9 @@ namespace PresentationLayer
             // imiReports
             // 
             this.imiReports.AutoSize = false;
+            this.imiReports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.subMenuReportPurchases,
+            this.subMenuReportSales});
             this.imiReports.IconChar = FontAwesome.Sharp.IconChar.PieChart;
             this.imiReports.IconColor = System.Drawing.Color.Black;
             this.imiReports.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -228,7 +240,20 @@ namespace PresentationLayer
             this.imiReports.Size = new System.Drawing.Size(90, 69);
             this.imiReports.Text = "Reportes";
             this.imiReports.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.imiReports.Click += new System.EventHandler(this.imiReports_Click);
+            // 
+            // subMenuReportPurchases
+            // 
+            this.subMenuReportPurchases.Name = "subMenuReportPurchases";
+            this.subMenuReportPurchases.Size = new System.Drawing.Size(166, 22);
+            this.subMenuReportPurchases.Text = "Reporte Compras";
+            this.subMenuReportPurchases.Click += new System.EventHandler(this.subMenuReportPurchases_Click);
+            // 
+            // subMenuReportSales
+            // 
+            this.subMenuReportSales.Name = "subMenuReportSales";
+            this.subMenuReportSales.Size = new System.Drawing.Size(166, 22);
+            this.subMenuReportSales.Text = "Reporte Ventas";
+            this.subMenuReportSales.Click += new System.EventHandler(this.subMenuReportSales_Click);
             // 
             // imiAbout
             // 
@@ -250,7 +275,7 @@ namespace PresentationLayer
             this.menuTitle.Location = new System.Drawing.Point(0, 0);
             this.menuTitle.Name = "menuTitle";
             this.menuTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuTitle.Size = new System.Drawing.Size(1370, 51);
+            this.menuTitle.Size = new System.Drawing.Size(1426, 51);
             this.menuTitle.TabIndex = 1;
             this.menuTitle.Text = "menuStrip2";
             // 
@@ -271,7 +296,7 @@ namespace PresentationLayer
             this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContainer.Location = new System.Drawing.Point(0, 124);
             this.pnlContainer.Name = "pnlContainer";
-            this.pnlContainer.Size = new System.Drawing.Size(1370, 507);
+            this.pnlContainer.Size = new System.Drawing.Size(1426, 571);
             this.pnlContainer.TabIndex = 3;
             // 
             // lblUserName
@@ -286,18 +311,11 @@ namespace PresentationLayer
             this.lblUserName.TabIndex = 4;
             this.lblUserName.Text = "Usuario";
             // 
-            // subMenuBusinessData
-            // 
-            this.subMenuBusinessData.Name = "subMenuBusinessData";
-            this.subMenuBusinessData.Size = new System.Drawing.Size(180, 22);
-            this.subMenuBusinessData.Text = "Negocio";
-            this.subMenuBusinessData.Click += new System.EventHandler(this.subMenuBusinessData_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 631);
+            this.ClientSize = new System.Drawing.Size(1426, 695);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.pnlContainer);
             this.Controls.Add(this.lblTitle);
@@ -337,6 +355,8 @@ namespace PresentationLayer
         private FontAwesome.Sharp.IconMenuItem subMenuSaleRegister;
         private FontAwesome.Sharp.IconMenuItem subMenuSaleDetail;
         private System.Windows.Forms.ToolStripMenuItem subMenuBusinessData;
+        private System.Windows.Forms.ToolStripMenuItem subMenuReportPurchases;
+        private System.Windows.Forms.ToolStripMenuItem subMenuReportSales;
     }
 }
 

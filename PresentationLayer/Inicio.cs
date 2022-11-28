@@ -113,14 +113,19 @@ namespace PresentationLayer
             OpenForm((IconMenuItem)sender, new Forms.frmClient());
         }
 
-        private void imiReports_Click(object sender, EventArgs e)
-        {
-            OpenForm((IconMenuItem)sender, new Forms.frmReport());
-        }
-
         private void subMenuBusinessData_Click(object sender, EventArgs e)
         {
             OpenForm(imiAdmin, new Forms.frmBusinessData());
+        }
+
+        private void subMenuReportPurchases_Click(object sender, EventArgs e)
+        {
+            OpenForm(imiReports, new Forms.frmReportPurchase());
+        }
+
+        private void subMenuReportSales_Click(object sender, EventArgs e)
+        {
+            OpenForm(imiReports, new Forms.frmReportSale());
         }
     }
 }
